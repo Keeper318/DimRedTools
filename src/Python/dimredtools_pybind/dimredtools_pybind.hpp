@@ -9,24 +9,24 @@
 #include "DimRedTools/DimRedTools.hpp"
 
 namespace py = pybind11;
-// using py::literals;
+using py::literals::operator""_a;
 
 // Use this if you want no copy returns for stl vectors
 // If not then just delete/comment this out
-PYBIND11_MAKE_OPAQUE(std::vector<size_t>);
-PYBIND11_MAKE_OPAQUE(std::vector<double>);
-PYBIND11_MAKE_OPAQUE(std::vector<int>);
+PYBIND11_MAKE_OPAQUE(std::vector<size_t>)
+PYBIND11_MAKE_OPAQUE(std::vector<double>)
+PYBIND11_MAKE_OPAQUE(std::vector<int>)
 
 namespace pybind11 {
 namespace detail {
 
-template <typename T, typename Class_>
-void bindDefaultConstructor(Class_& cl) {
+template <typename T, typename Class>
+void bindDefaultConstructor(Class& cl) {
     cl.def(py::init([]() { return new T(); }), "Default constructor");
 }
 
-template <typename T, typename Class_>
-void bindCopyFunctions(Class_& cl) {
+template <typename T, typename Class>
+void bindCopyFunctions(Class& cl) {
     cl.def(py::init([](const T& cp) { return new T(cp); }), "Copy constructor");
     cl.def("__copy__", [](T& v) { return T(v); });
     cl.def("__deepcopy__", [](T& v, py::dict& memo) { return T(v); });
