@@ -134,8 +134,6 @@ void classMethodDocInject(
         return;
     }
 
-    // TODO: parse __init__ separately, currently __init__ can be overloaded
-    // which might cause parsing error. So they are skipped.
     if (function_name == "__init__") {
         return;
     }
