@@ -71,7 +71,7 @@ jobs:
           #   python-arch: x86
           #   cmake-arch: -A Win32
     env:
-      CIBW_SKIP: "cp27-* cp35-* pp27-* pp36-* pp37-*"
+      CIBW_SKIP: "cp36-* cp311-*"
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -94,7 +94,7 @@ jobs:
         shell: bash
         run: |
           echo "CIBW_BUILD=*-${{ matrix.cibw-arch }}" >> $GITHUB_ENV
-          echo "CIBW_BEFORE_ALL_LINUX=pip install cmake && ln -s \$(which cmake) /usr/local/bin/cmake" >> $GITHUB_ENV
+          echo "CIBW_BEFORE_ALL_LINUX=pip install cmake && ln -sf \$(which cmake) /usr/local/bin/cmake" >> $GITHUB_ENV
 
       - name: Build Wheels
         run: |
