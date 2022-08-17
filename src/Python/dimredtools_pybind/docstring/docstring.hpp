@@ -145,7 +145,7 @@ void classMethodDocInject(
     const std::unordered_map<std::string, std::string>& map_parameter_body_docs =
         std::unordered_map<std::string, std::string>());
 
-__attribute__((unused)) extern py::handle static_property;
+extern py::handle static_property;
 
 }  // namespace docstring
 }  // namespace dim_red_tools

@@ -13,6 +13,7 @@ docds/objects.inv
 scratch
 cmake-build
 cmake-build-debug
+cmake-build-debugmsvc
 cmake-build-linux
 cmake-build-release
 build

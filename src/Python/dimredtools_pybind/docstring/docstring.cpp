@@ -92,7 +92,7 @@ void splitString(std::vector<std::string>& tokens, const std::string& str,
 #pragma clang diagnostic pop
 
 // ref: enum_base in pybind11.h
-__attribute__((unused)) py::handle static_property =
+py::handle static_property =
     py::handle(reinterpret_cast<PyObject*>(py::detail::get_internals().static_property_type));
 
 void classMethodDocInject(
