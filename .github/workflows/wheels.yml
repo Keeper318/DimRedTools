@@ -18,15 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '3.7'
 
       - name: Setup CMake
-        uses: jwlawson/actions-setup-cmake@v1.5
+        uses: jwlawson/actions-setup-cmake@v1.12
         with:
           cmake-version: '3.16.x'
 
@@ -46,7 +46,7 @@ jobs:
           python -m twine check wheelhouse/*
 
       - name: Upload sdist
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: wheels
           path: wheelhouse/*.tar.gz
@@ -74,15 +74,15 @@ jobs:
       CIBW_SKIP: "cp27-* cp35-* pp27-* pp36-* pp37-*"
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python version
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.7
 
       - name: Setup CMake
-        uses: jwlawson/actions-setup-cmake@v1.5
+        uses: jwlawson/actions-setup-cmake@v1.12
         with:
           cmake-version: '3.16.x'
 
@@ -105,7 +105,7 @@ jobs:
         run: ls -lh wheelhouse
 
       - name: Upload wheels to artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: wheelhouse/*.whl
           name: wheels
@@ -118,14 +118,14 @@ jobs:
 
     steps:
       - name: Collect sdist and wheels
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: wheels
           path: wheelhouse     
     
       # Upload to Testing PyPI
       - name: Publish package to TestPyPI
-        uses: pypa/gh-action-pypi-publish@master
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
           password: ${{ secrets.test_pypi_password }}
@@ -135,7 +135,7 @@ jobs:
 
       # Publish to official PyPI channel
       - name: Publish package to PyPI
-        uses: pypa/gh-action-pypi-publish@master
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
           password: ${{ secrets.pypi_password }}

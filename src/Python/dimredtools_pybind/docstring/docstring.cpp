@@ -25,11 +25,11 @@
 // ----------------------------------------------------------------------------
 
 #include <regex>
-#include <sstream>
 #include <string>
 #include <tuple>
 #include <unordered_map>
 #include <unordered_set>
+#include <iostream>
 
 #include "dimredtools_pybind/dimredtools_pybind.hpp"
 #include "dimredtools_pybind/docstring/docstring.hpp"
