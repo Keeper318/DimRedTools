@@ -7,5 +7,5 @@ int main()
     std::cout << "My Name is " << my_name << std::endl;
     
     // Respond
-    std::cout << dim_red_tools::hello(my_name) << std::endl;
+    std::cout << dim_red::hello(my_name) << std::endl;
 }

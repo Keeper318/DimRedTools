@@ -8,6 +8,6 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(extern_doctest)
 
-add_executable(run-tests ${CMAKE_CURRENT_SOURCE_DIR}/run-tests.cpp ${CMAKE_CURRENT_SOURCE_DIR}/test-dimredtools.cpp)
+add_executable(run-tests ${CMAKE_CURRENT_SOURCE_DIR}/run-tests.cpp ${CMAKE_CURRENT_SOURCE_DIR}/test-dimredtools.cpp test-trees.cpp)
 target_link_libraries(run-tests PRIVATE doctest::doctest DimRedTools::DRT)
 

@@ -1,26 +1,20 @@
 #pragma once
 
-#include <pybind11/numpy.h>
-#include <pybind11/operators.h>
-#include <pybind11/pybind11.h>  // Include first to suppress compiler warnings
-#include <pybind11/stl.h>
-#include <pybind11/stl_bind.h>
+#include <pybind11/pybind11.h>
+#include <pybind11/eigen.h>
 
-#include "DimRedTools/DimRedTools.hpp"
+#include "DimRedTools/CoverTree.hpp"
 
 namespace py = pybind11;
 using py::literals::operator""_a;
-
-// Use this if you want no copy returns for stl vectors
-// If not then just delete/comment this out
-PYBIND11_MAKE_OPAQUE(std::vector<size_t>)
-PYBIND11_MAKE_OPAQUE(std::vector<double>)
-PYBIND11_MAKE_OPAQUE(std::vector<int>)
+using dim_red::Matrix;
+using dim_red::NearestNeighbors;
+typedef std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> VectorPair;
 
 namespace pybind11 {
 namespace detail {
 
-template <typename T, typename Class>
+/*template <typename T, typename Class>
 void bindDefaultConstructor(Class& cl) {
     cl.def(py::init([]() { return new T(); }), "Default constructor");
 }
@@ -30,7 +24,23 @@ void bindCopyFunctions(Class& cl) {
     cl.def(py::init([](const T& cp) { return new T(cp); }), "Copy constructor");
     cl.def("__copy__", [](T& v) { return T(v); });
     cl.def("__deepcopy__", [](T& v, py::dict& memo) { return T(v); });
-}
+}*/
 
 }  // namespace detail
 }  // namespace pybind11
+
+class PyNearestNeighbors : public NearestNeighbors {
+public:
+    using NearestNeighbors::NearestNeighbors;
+
+    std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> query(const Eigen::Ref<const Matrix> &point,
+                                                            int k,
+                                                            bool sort_results) const override {
+        PYBIND11_OVERRIDE_PURE(VectorPair, NearestNeighbors, query, point, k, sort_results);
+    }
+    std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> queryRadius(
+        const Eigen::Ref<const Matrix> &point, double radius, bool sort_results) const override {
+        PYBIND11_OVERRIDE_PURE_NAME(VectorPair, NearestNeighbors, "query_radius", queryRadius,
+                                    point, radius, sort_results);
+    }
+};

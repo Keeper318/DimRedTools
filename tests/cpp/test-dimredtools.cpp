@@ -1,40 +1,59 @@
 #include "doctest/doctest.h"
 #include "DimRedTools/DimRedTools.hpp"
-#include <vector>
 
-template <typename T>
-int checkArray(std::vector<T>& a, std::vector<T>& b) {
-    for (size_t i = 0; i < a.size(); i++) {
-        auto result = a[i] == doctest::Approx(b[i]);
-        if (!result) {
-            return static_cast<int>(i);
+using dim_red::NeighborsHeap;
+using dim_red::Matrix;
+using dim_red::Metric;
+using dim_red::getMetricByName;
+
+TEST_SUITE("NeighborsHeap") {
+    TEST_CASE("IncorrectLimit") {
+        CHECK_THROWS(NeighborsHeap<int>(0));
+    }
+    TEST_CASE("SimpleUsage") {
+        srand(12);
+        int limit = 1000;
+        NeighborsHeap<int> heap(limit);
+        double max_number = 0;
+        for (int i = 0; i < 1000; ++i) {
+            double next = rand();
+            heap.add(next);
+            max_number = std::max(max_number, next);
+            CHECK_EQ(heap.peek(), max_number);
         }
     }
-    return -1;
-}
-
-TEST_SUITE("VectorMath") {
-    TEST_CASE("Doubles") {
-        std::vector<double> input{0.0, 1.0, 2.0};
-        std::vector<double> expected{0.0, 2.0, 4.0};
-        double scalar = 2.0;
-        auto output = dim_red_tools::multiplyByScalar(input, scalar);
-
-        SUBCASE("SameLength") {
-            CHECK_EQ(output.size(), output.size());
+    TEST_CASE("ExceedingLimit") {
+        NeighborsHeap<int> heap(4);
+        for (double number : {1, 2, 3, 4, 2}) {
+            heap.add(number);
         }
-        SUBCASE("CorrectOutput") {
-            auto val = checkArray(output, expected);
-            CHECK_MESSAGE((val == -1), "Vectors are not equal");
-        }
+        CHECK_EQ(heap.peek(), 3);
+        heap.add(2);
+        CHECK_EQ(heap.peek(), 2);
     }
 }
 
-TEST_SUITE("Hello") {
-    TEST_CASE("Name") {
-        std::string input = "Jeremy";
-        std::string output = dim_red_tools::hello(input);
-        std::string expected = "Hello Jeremy";
-        CHECK_EQ(output, expected);
+TEST_SUITE("Metrics") {
+    TEST_CASE("UnknownMetric") {
+        CHECK_THROWS(getMetricByName("some_metric"));
+    }
+    TEST_CASE("chebyshev") {
+        Metric chebyshev = getMetricByName("chebyshev");
+        CHECK_EQ(chebyshev(Matrix{{1, 0, 0}}, Matrix{{0, 1, 0}}), 1);
+        CHECK_EQ(chebyshev(Matrix{{1, 0, 0}}, Matrix{{3, -5, 3}}), 5);
+    }
+    TEST_CASE("l1") {
+        for (const std::string &name : {"l1", "cityblock", "manhattan"}) {
+            Metric metric = getMetricByName(name);
+            CHECK_EQ(metric(Matrix{{1, 0, 0}}, Matrix{{0, 1, 0}}), 2);
+            CHECK_EQ(metric(Matrix{{1, 0, 0}}, Matrix{{3, -5, 3}}), 10);
+        }
+    }
+    TEST_CASE("l2") {
+        for (const std::string &name : {"l2", "euclidean"}) {
+            Metric metric = getMetricByName(name);
+            CHECK_EQ(metric(Matrix{{1, 1, 0}}, Matrix{{0, 1, 0}}), 1);
+            CHECK_EQ(metric(Matrix{{1, 0, 0}}, Matrix{{4, -4, 0}}), 5);
+        }
     }
 }

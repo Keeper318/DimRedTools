@@ -34,7 +34,7 @@ option(DRT_BUILD_PYMODULE "DRT -Build Python Module" ON)
 option(DRT_BUILD_TESTS "DRT - Build Tests" ON)
 option(DRT_BUILD_BENCHMARKS "DRT - Build Benchmarks" ON)
 option(DRT_BUILD_EXAMPLES "DRT - Build Examples" ON)
-option(DRT_WITH_OPENMP "DRT - Build with OpenMP Support" OFF)
+option(DRT_WITH_OPENMP "DRT - Build with OpenMP Support" ON)
 option(DRT_BUILD_WERROR "DRT - Add Werror flag to build (turns warnings into errors)" OFF)
 
 # Add any dependencies needed by our library

@@ -5,8 +5,8 @@ configure_file("DRTConfig.hpp.in" "DRTConfig.hpp" @ONLY)
 set(DIMREDTOOLS_SRC "${CMAKE_CURRENT_SOURCE_DIR}")
 set(INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
 set(DIMREDTOOLS_INCLUDE_DIR "${INCLUDE_DIR}/DimRedTools")
-set(DIMREDTOOLS_SOURCE_FILES ${DIMREDTOOLS_SRC}/DimRedTools.cpp ${DIMREDTOOLS_SRC}/DRTConfig.cpp)
-set(DIMREDTOOLS_HEADER_FILES ${DIMREDTOOLS_INCLUDE_DIR}/DimRedTools.hpp)
+set(DIMREDTOOLS_SOURCE_FILES ${DIMREDTOOLS_SRC}/DimRedTools.cpp ${DIMREDTOOLS_SRC}/DRTConfig.cpp ${DIMREDTOOLS_SRC}/CoverTree.cpp)
+set(DIMREDTOOLS_HEADER_FILES ${DIMREDTOOLS_INCLUDE_DIR}/DimRedTools.hpp ${DIMREDTOOLS_INCLUDE_DIR}/CoverTree.hpp)
 
 # Create the CPP Library
 set(LIB_TYPE STATIC)
@@ -59,6 +59,9 @@ if (DRT_WITH_OPENMP)
   find_package(OpenMP)
   target_link_libraries(${PROJECT_NAME} PUBLIC OpenMP::OpenMP_CXX)
 endif()
+
+find_package(Eigen3 3.4 REQUIRED NO_MODULE)
+target_link_libraries(${PROJECT_NAME} PUBLIC Eigen3::Eigen)
 
 # Set Properties
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${DIMREDTOOLS_HEADER_FILES}")

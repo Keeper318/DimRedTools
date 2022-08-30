@@ -38,7 +38,7 @@
 #include "dimredtools_pybind/dimredtools_pybind.hpp"
 
 namespace py = pybind11;
-namespace dim_red_tools {
+namespace dim_red {
 namespace docstring {
 
 class ArgumentDoc {
@@ -148,4 +148,4 @@ void classMethodDocInject(
 extern py::handle static_property;
 
 }  // namespace docstring
-}  // namespace dim_red_tools
+}  // namespace dim_red

@@ -34,11 +34,7 @@
 #include "dimredtools_pybind/dimredtools_pybind.hpp"
 #include "dimredtools_pybind/docstring/docstring.hpp"
 
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "UnreachableCode"
-#pragma ide diagnostic ignored "ConstantConditionsOC"
-
-namespace dim_red_tools {
+namespace dim_red {
 namespace docstring {
 
 // Count the length of current word starting from start_pos
@@ -74,9 +70,6 @@ std::string& stripString(std::string& str, const std::string& chars) {
     return leftStripString(rightStripString(str, chars), chars);
 }
 
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "EndlessLoop"
-#pragma ide diagnostic ignored "UnusedValue"
 void splitString(std::vector<std::string>& tokens, const std::string& str,
                  const std::string& delimiters /* = " "*/, bool trim_empty_str /* = true*/) {
     std::string::size_type pos = 0, new_pos = 0, last_pos = 0;
@@ -89,7 +82,6 @@ void splitString(std::vector<std::string>& tokens, const std::string& str,
         last_pos = new_pos + 1;
     }
 }
-#pragma clang diagnostic pop
 
 // ref: enum_base in pybind11.h
 py::handle static_property =
@@ -500,6 +492,4 @@ std::vector<std::string> FunctionDoc::getArgumentTokens(const std::string& pybin
 }
 
 }  // namespace docstring
-}  // namespace dim_red_tools
-
-#pragma clang diagnostic pop
+}  // namespace dim_red
