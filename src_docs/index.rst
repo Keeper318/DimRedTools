@@ -4,15 +4,14 @@
    contain the root `toctree` directive.
    NOTE: The python modules documentation for PURE python modules must be explicitly annotated with meta data. See below Line 51.
 
-.. image:: _static/logo_1.png
-    :alt: DimRedTools Logo
-    :width: 320px
-    :align: center
-
 -----------
 
 DimRedTools: A set of algorithms and data structures for dimensionality reduction
 ===============================================
+
+.. note::
+
+   This project is under active development.
 
 .. only: not latex
 

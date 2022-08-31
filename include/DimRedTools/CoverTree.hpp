@@ -28,15 +28,14 @@ public:
      * @param base the base of the expansion constant.
      * @param metric a metric distance measure for nearest neighbor search.
      */
-    CoverTree(const Eigen::Ref<Matrix> &x, double base = 1.3,
+    CoverTree(const Eigen::Ref<const Matrix> &x, double base = 1.3,
               const std::string &metric = "euclidean");
 
-    std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> query(
-        const Eigen::Ref<const Matrix> &point, int k, bool sort_results = true) const override;
+    std::pair<Vector, Vector> query(const Eigen::Ref<const Vector> &point, int k,
+                                    bool sort_results = true) const override;
 
-    std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> queryRadius(
-        const Eigen::Ref<const Matrix> &point, double radius,
-        bool sort_results = false) const override;
+    std::pair<Vector, Vector> queryRadius(const Eigen::Ref<const Vector> &point, double radius,
+                                          bool sort_results = false) const override;
 
 private:
     struct Node {
@@ -52,31 +51,30 @@ private:
 
     struct DistanceNode {
         const double distance;
-        const Node* node;
+        const Node *node;
     };
 
     Node build();
 
-    Node batchInsert(int point, int max_scale, int top_scale, std::vector<DistanceSet*> *point_set,
-                     std::vector<DistanceSet*> *consumed_set) const;
+    Node batchInsert(int point, int max_scale, int top_scale, std::vector<DistanceSet *> *point_set,
+                     std::vector<DistanceSet *> *consumed_set) const;
 
     double getCoverRadius(int scale) const;
 
     int getScale(double value) const;
 
-    double maxDistance(const std::vector<DistanceSet*> &v) const;
+    double maxDistance(const std::vector<DistanceSet *> &v) const;
 
-    void split(int max_scale, std::vector<DistanceSet*> *point_set,
-               std::vector<DistanceSet*> *far_set) const;
+    void split(int max_scale, std::vector<DistanceSet *> *point_set,
+               std::vector<DistanceSet *> *far_set) const;
 
-    void distanceSplit(int new_point, int max_scale, std::vector<DistanceSet*> *point_set,
-                       std::vector<DistanceSet*> *new_point_set) const;
+    void distanceSplit(int new_point, int max_scale, std::vector<DistanceSet *> *point_set,
+                       std::vector<DistanceSet *> *new_point_set) const;
 
-    std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> search(const Eigen::Ref<const Matrix> &point,
-                                                             int k, double radius, bool k_nearest,
-                                                             bool sort_results) const;
+    std::pair<Vector, Vector> search(const Eigen::Ref<const Vector> &point, int k, double radius,
+                                     bool k_nearest, bool sort_results) const;
 
-    const Eigen::Ref<Matrix> &data_;
+    const Eigen::Ref<const Matrix> data_;
     Metric distance_;
     double base_;
     double inv_log_base_;

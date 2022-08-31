@@ -6,11 +6,10 @@ src_docs/python_api
 docs/.doctrees
 docs/.buildinfo
 docs/_sources
-docds/objects.inv
+docs/objects.inv
 
 
 # build directories
-scratch
 cmake-build
 cmake-build-debug
 cmake-build-debugmsvc
@@ -42,9 +41,6 @@ solns
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
-*.so
 
 # Distribution / packaging
 .Python

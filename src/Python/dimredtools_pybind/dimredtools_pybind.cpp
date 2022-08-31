@@ -36,8 +36,8 @@ PYBIND11_MODULE(dimredtools_pybind, m) {
         m, "NearestNeighbors",
         "An abstract class for data structures that implement nearest neighbor search.")
         .def("query", &NearestNeighbors::query, "point"_a, "k"_a, "sort_results"_a = true,
-             "Retrieves the k nearest neighbors for the query point.")
-        .def("query_radius", &NearestNeighbors::queryRadius, "point"_a, "radius"_a,
+             "Retrieves the k-nearest neighbors for the query point.")
+        .def("query_radius", &NearestNeighbors::queryRadius, "point"_a, "r"_a,
              "sort_results"_a = false,
              "Retrieves all the neighbors of the query point in the specified radius.");
 

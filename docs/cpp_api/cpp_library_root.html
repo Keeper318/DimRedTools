@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C++ Library API &mdash; DimRedTools 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Namespace dim_red" href="namespace_dim_red.html" />
+    <link rel="prev" title="dimredtools.helper" href="../python_api/dimredtools.helper.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DimRedTools
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introducing DimRedTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builddocs.html">Building Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/Python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/C%2B%2B/index.html">C++</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python_api/dimredtools.html">dimredtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_api/dimredtools.helper.html">dimredtools.helper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">C++ Library API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#namespaces">Namespaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="namespace_dim_red.html">Namespace dim_red</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes-and-structs">Classes and Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_node.html">Struct CoverTree::DistanceNode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_set.html">Struct CoverTree::DistanceSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_node.html">Struct CoverTree::Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_bruteforce.html">Class Bruteforce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_cover_tree.html">Class CoverTree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_nearest_neighbors.html">Class NearestNeighbors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_neighbors_heap.html">Template Class NeighborsHeap</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="function___treetest_8hpp_1abf6869bbf5f46280dd1dbf8e9a71030e.html">Function compare</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function__dim_red_tools_8hpp_1a6fa12d3d3cdeb861c130fed73f836092.html">Function dim_red::getMetricByName</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function___testdata_8hpp_1aeaf29d11348f760a1607d0383310f7ce.html">Function testDataset</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#typedefs">Typedefs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a54b732889aff7d6ffa2d39f32b5c676f.html">Typedef dim_red::Matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1ab2c3e1daa4bbe4a8b9dba362059d9cb4.html">Typedef dim_red::Metric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html">Typedef dim_red::Vector</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DimRedTools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>C++ Library API</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="c-library-api">
+<h1>C++ Library API<a class="headerlink" href="#c-library-api" title="Permalink to this headline"></a></h1>
+<section id="class-hierarchy">
+<h2>Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Permalink to this headline"></a></h2>
+<ul class="treeView" id="class-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li class="lastChild">Namespace <a href="namespace_dim_red.html#namespace-dim-red">dim_red</a><ul><li>Class <a href="classdim__red_1_1_bruteforce.html#exhale-class-classdim-red-1-1-bruteforce">Bruteforce</a></li><li>Class <a href="classdim__red_1_1_cover_tree.html#exhale-class-classdim-red-1-1-cover-tree">CoverTree</a><ul><li>Struct <a href="structdim__red_1_1_cover_tree_1_1_distance_node.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-node">CoverTree::DistanceNode</a></li><li>Struct <a href="structdim__red_1_1_cover_tree_1_1_distance_set.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-set">CoverTree::DistanceSet</a></li><li class="lastChild">Struct <a href="structdim__red_1_1_cover_tree_1_1_node.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-node">CoverTree::Node</a></li></ul></li><li>Class <a href="classdim__red_1_1_nearest_neighbors.html#exhale-class-classdim-red-1-1-nearest-neighbors">NearestNeighbors</a></li><li class="lastChild">Template Class <a href="classdim__red_1_1_neighbors_heap.html#exhale-class-classdim-red-1-1-neighbors-heap">NeighborsHeap</a></li></ul></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView class-treeView --></section>
+<section id="file-hierarchy">
+<h2>File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Permalink to this headline"></a></h2>
+<ul class="treeView" id="file-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li class="lastChild">Directory <a href="dir_include.html#dir-include">include</a><ul><li class="lastChild">Directory <a href="dir_include_DimRedTools.html#dir-include-DimRedTools">DimRedTools</a><ul><li>Directory <a href="dir_include_DimRedTools_tests.html#dir-include-DimRedTools-tests">tests</a><ul><li>File <a href="file_include_DimRedTools_tests__testdata.hpp.html#file-include-DimRedTools-tests-testdata.hpp">_testdata.hpp</a></li><li class="lastChild">File <a href="file_include_DimRedTools_tests__treetest.hpp.html#file-include-DimRedTools-tests-treetest.hpp">_treetest.hpp</a></li></ul></li><li>File <a href="file_include_DimRedTools_CoverTree.hpp.html#file-include-DimRedTools-CoverTree.hpp">CoverTree.hpp</a></li><li class="lastChild">File <a href="file_include_DimRedTools_DimRedTools.hpp.html#file-include-DimRedTools-DimRedTools.hpp">DimRedTools.hpp</a></li></ul></li></ul></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView file-treeView --></section>
+<section id="full-api">
+<h2>Full API<a class="headerlink" href="#full-api" title="Permalink to this headline"></a></h2>
+<section id="namespaces">
+<h3>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_dim_red.html">Namespace dim_red</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_dim_red.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_dim_red.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_dim_red.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="classes-and-structs">
+<h3>Classes and Structs<a class="headerlink" href="#classes-and-structs" title="Permalink to this headline"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_node.html">Struct CoverTree::DistanceNode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_node.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_node.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_set.html">Struct CoverTree::DistanceSet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_set.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_set.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_node.html">Struct CoverTree::Node</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_node.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_node.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classdim__red_1_1_bruteforce.html">Class Bruteforce</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_bruteforce.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classdim__red_1_1_bruteforce.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_bruteforce.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classdim__red_1_1_cover_tree.html">Class CoverTree</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_cover_tree.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classdim__red_1_1_cover_tree.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_cover_tree.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classdim__red_1_1_cover_tree.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_cover_tree.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classdim__red_1_1_nearest_neighbors.html">Class NearestNeighbors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_nearest_neighbors.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classdim__red_1_1_nearest_neighbors.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_nearest_neighbors.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classdim__red_1_1_neighbors_heap.html">Template Class NeighborsHeap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_neighbors_heap.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function___treetest_8hpp_1abf6869bbf5f46280dd1dbf8e9a71030e.html">Function compare</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function___treetest_8hpp_1abf6869bbf5f46280dd1dbf8e9a71030e.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function__dim_red_tools_8hpp_1a6fa12d3d3cdeb861c130fed73f836092.html">Function dim_red::getMetricByName</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function__dim_red_tools_8hpp_1a6fa12d3d3cdeb861c130fed73f836092.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function___testdata_8hpp_1aeaf29d11348f760a1607d0383310f7ce.html">Function testDataset</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function___testdata_8hpp_1aeaf29d11348f760a1607d0383310f7ce.html#function-documentation">Function Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="typedefs">
+<h3>Typedefs<a class="headerlink" href="#typedefs" title="Permalink to this headline"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a54b732889aff7d6ffa2d39f32b5c676f.html">Typedef dim_red::Matrix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a54b732889aff7d6ffa2d39f32b5c676f.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1ab2c3e1daa4bbe4a8b9dba362059d9cb4.html">Typedef dim_red::Metric</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1ab2c3e1daa4bbe4a8b9dba362059d9cb4.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html">Typedef dim_red::Vector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../python_api/dimredtools.helper.html" class="btn btn-neutral float-left" title="dimredtools.helper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="namespace_dim_red.html" class="btn btn-neutral float-right" title="Namespace dim_red" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Filipp Zapolskikh.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

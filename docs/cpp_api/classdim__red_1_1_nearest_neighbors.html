@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class NearestNeighbors &mdash; DimRedTools 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/collapsible-lists\js\CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists\js\apply-collapsible-lists.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Template Class NeighborsHeap" href="classdim__red_1_1_neighbors_heap.html" />
+    <link rel="prev" title="Class CoverTree" href="classdim__red_1_1_cover_tree.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DimRedTools
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introducing DimRedTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builddocs.html">Building Documentation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/Python/index.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/C%2B%2B/index.html">C++</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python_api/dimredtools.html">dimredtools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python_api/dimredtools.helper.html">dimredtools.helper</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="cpp_library_root.html">C++ Library API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cpp_library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp_library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp_library_root.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cpp_library_root.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_library_root.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_node.html">Struct CoverTree::DistanceNode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_set.html">Struct CoverTree::DistanceSet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_node.html">Struct CoverTree::Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_bruteforce.html">Class Bruteforce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_cover_tree.html">Class CoverTree</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Class NearestNeighbors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_neighbors_heap.html">Template Class NeighborsHeap</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_library_root.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_library_root.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DimRedTools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="cpp_library_root.html">C++ Library API</a> &raquo;</li>
+      <li>Class NearestNeighbors</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="class-nearestneighbors">
+<span id="exhale-class-classdim-red-1-1-nearest-neighbors"></span><h1>Class NearestNeighbors<a class="headerlink" href="#class-nearestneighbors" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_DimRedTools_DimRedTools.hpp.html#file-include-dimredtools-dimredtools-hpp"><span class="std std-ref">File DimRedTools.hpp</span></a></p></li>
+</ul>
+<section id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline"></a></h2>
+<section id="derived-types">
+<h3>Derived Types<a class="headerlink" href="#derived-types" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">dim_red::Bruteforce</span></code> (<a class="reference internal" href="classdim__red_1_1_bruteforce.html#exhale-class-classdim-red-1-1-bruteforce"><span class="std std-ref">Class Bruteforce</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">dim_red::CoverTree</span></code> (<a class="reference internal" href="classdim__red_1_1_cover_tree.html#exhale-class-classdim-red-1-1-cover-tree"><span class="std std-ref">Class CoverTree</span></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline"></a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7dim_red16NearestNeighborsE">
+<span class="target" id="classdim__red_1_1_nearest_neighbors"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NearestNeighbors</span></span></span><a class="headerlink" href="#_CPPv4N7dim_red16NearestNeighborsE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>An abstract class for data structures that implement nearest neighbor search. </p>
+<p>Subclassed by <a class="reference internal" href="classdim__red_1_1_bruteforce.html#classdim__red_1_1_bruteforce"><span class="std std-ref">dim_red::Bruteforce</span></a>, <a class="reference internal" href="classdim__red_1_1_cover_tree.html#classdim__red_1_1_cover_tree"><span class="std std-ref">dim_red::CoverTree</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7dim_red16NearestNeighborsD0Ev">
+<span class="target" id="classdim__red_1_1_nearest_neighbors_1ab11815c5a533a9bbf4e6a77971722a0f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~NearestNeighbors</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7dim_red16NearestNeighborsD0Ev" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7dim_red16NearestNeighbors5queryERKN5Eigen3RefIK6VectorEEib">
+<span class="target" id="classdim__red_1_1_nearest_neighbors_1a9acd45734ea2ae25b50d69cb166bea24"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">query</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">point</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sort_results</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK7dim_red16NearestNeighbors5queryERKN5Eigen3RefIK6VectorEEib" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Retrieves the k-nearest neighbors for the query point. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point</strong> – the query point. </p></li>
+<li><p><strong>k</strong> – the number of nearest neighbors to search for. </p></li>
+<li><p><strong>sort_results</strong> – if true, the neighbors will be sorted by distances in ascending order. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the k-nearest neighbors. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7dim_red16NearestNeighbors11queryRadiusERKN5Eigen3RefIK6VectorEEdb">
+<span class="target" id="classdim__red_1_1_nearest_neighbors_1ab4ddc5fdacc2af65d508efd59363b9f5"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">queryRadius</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">point</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">radius</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sort_results</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK7dim_red16NearestNeighbors11queryRadiusERKN5Eigen3RefIK6VectorEEdb" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Retrieves all the neighbors of the query point in the specified radius. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point</strong> – the query point. </p></li>
+<li><p><strong>radius</strong> – the search radius. </p></li>
+<li><p><strong>sort_results</strong> – if true, the neighbors will be sorted by distances in ascending order. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the nearest neighbors in the specified radius. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7dim_red16NearestNeighbors8validateEiidb">
+<span class="target" id="classdim__red_1_1_nearest_neighbors_1a8b03d0a6f75b618e9b6cdba08bcb478c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">validate</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">data_size</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">radius</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k_nearest</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7dim_red16NearestNeighbors8validateEiidb" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7dim_red16NearestNeighbors16processNeighborsEibPNSt6vectorINSt4pairIdiEEEEPNSt6vectorINSt4pairIdiEEEE">
+<span class="target" id="classdim__red_1_1_nearest_neighbors_1a0da087704129324b4cb0a7e24f364fac"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">processNeighbors</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sort_results</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">neighbors</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">bound_neighbors</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7dim_red16NearestNeighbors16processNeighborsEibPNSt6vectorINSt4pairIdiEEEEPNSt6vectorINSt4pairIdiEEEE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classdim__red_1_1_cover_tree.html" class="btn btn-neutral float-left" title="Class CoverTree" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classdim__red_1_1_neighbors_heap.html" class="btn btn-neutral float-right" title="Template Class NeighborsHeap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Filipp Zapolskikh.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

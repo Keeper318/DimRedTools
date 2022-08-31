@@ -27,7 +27,7 @@ void NearestNeighbors::validate(int data_size, int k, double radius, bool k_near
     }
 }
 
-std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> NearestNeighbors::processNeighbors(
+std::pair<Vector, Vector> NearestNeighbors::processNeighbors(
     int k, bool sort_results, std::vector<std::pair<double, int>> *neighbors,
     std::vector<std::pair<double, int>> *bound_neighbors) const {
     while (!bound_neighbors->empty() && static_cast<int>(neighbors->size()) < k) {
@@ -37,8 +37,7 @@ std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> NearestNeighbors::processNeigh
     if (sort_results) {
         std::sort(neighbors->begin(), neighbors->end());
     }
-    std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> result{Eigen::RowVectorXd(neighbors->size()),
-                                                             Eigen::RowVectorXd(neighbors->size())};
+    std::pair<Vector, Vector> result{Vector(neighbors->size()), Vector(neighbors->size())};
     std::transform(neighbors->begin(), neighbors->end(), result.first.begin(),
                    [](auto &result) { return result.first; });
     std::transform(neighbors->begin(), neighbors->end(), result.second.begin(),
@@ -46,18 +45,18 @@ std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> NearestNeighbors::processNeigh
     return result;
 }
 
-Bruteforce::Bruteforce(const Eigen::Ref<Matrix> &x, const std::string &metric)
+Bruteforce::Bruteforce(const Eigen::Ref<const Matrix> &x, const std::string &metric)
     : data_(x), distance_(getMetricByName(metric)) {
     if (x.rows() == 0) {
         throw std::invalid_argument("Dataset is empty");
     }
 }
 
-std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> Bruteforce::query(
-    const Eigen::Ref<const Matrix> &point, int k, bool sort_results) const {
+std::pair<Vector, Vector> Bruteforce::query(const Eigen::Ref<const Vector> &point, int k,
+                                            bool sort_results) const {
     validate(static_cast<int>(data_.rows()), k, 0.0, true);
     NeighborsHeap<double> heap(static_cast<size_t>(k));
-    Eigen::RowVectorXd distances(data_.rows());
+    Vector distances(data_.rows());
     for (int i = 0; i < data_.rows(); ++i) {
         double distance = distance_(data_.row(i), point);
         heap.add(distance);
@@ -75,8 +74,8 @@ std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> Bruteforce::query(
     return processNeighbors(k, sort_results, &neighbors, &bound_neighbors);
 }
 
-std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> Bruteforce::queryRadius(
-    const Eigen::Ref<const Matrix> &point, double radius, bool sort_results) const {
+std::pair<Vector, Vector> Bruteforce::queryRadius(const Eigen::Ref<const Vector> &point,
+                                                  double radius, bool sort_results) const {
     validate(static_cast<int>(data_.rows()), 1, radius, false);
     std::vector<std::pair<double, int>> neighbors;
     std::vector<std::pair<double, int>> bound_neighbors;

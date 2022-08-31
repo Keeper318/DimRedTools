@@ -52,7 +52,7 @@ sys.path.insert(
 # ones.
 extensions = [
     'sphinx.ext.mathjax', 'sphinx.ext.autodoc', 'sphinx.ext.autosummary',
-    'sphinx.ext.napoleon', 'breathe', 'exhale', 'm2r', 'nbsphinx','nbsphinx_link',
+    'sphinx.ext.napoleon', 'breathe', 'exhale', 'm2r2', 'nbsphinx','nbsphinx_link',
 ]
 
 # Setup the breathe extension
@@ -91,8 +91,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'DimRedTools'
-copyright = u'2020, Jeremy Castagno'
-author = u'Jeremy Castagno'
+copyright = u'2022, Filipp Zapolskikh'
+author = u'Filipp Zapolskikh'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -110,7 +110,7 @@ release = version
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -134,7 +134,6 @@ todo_include_todos = False
 html_theme = "sphinx_rtd_theme"
 # html_theme_path = [theme_path]
 html_favicon = ""
-html_logo = '_static/logo_1.png'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -209,7 +208,7 @@ man_pages = [(master_doc, 'dimredtools', u'DimRedTools Documentation', [author],
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'dimredtools', u'DimRedTools Documentation', author, 'DimRedTools',
-     'Basic Python and CPP Library', 'Miscellaneous'),
+     'A set of algorithms and data structures for dimensionality reduction', 'Miscellaneous'),
 ]
 
 # Version 0: Added by Jaesik to list Python members using the source order

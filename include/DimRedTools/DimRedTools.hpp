@@ -12,11 +12,12 @@
 namespace dim_red {
 
 using Matrix = Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>;
+using Vector = Eigen::RowVectorXd;
 using Metric =
-    std::function<double(const Eigen::Ref<const Matrix> &, const Eigen::Ref<const Matrix> &)>;
+    std::function<double(const Eigen::Ref<const Vector> &, const Eigen::Ref<const Vector> &)>;
 
 /**
- * @brief A class for tracking k nearest neighbors. Implemented as a min-heap with a limited size.
+ * @brief A class for tracking k-nearest neighbors. Implemented as a min-heap with a limited size.
  *
  * @tparam T type of distance (usually double)
  */
@@ -71,15 +72,15 @@ public:
     }
 
     /**
-     * @brief Retrieves the k nearest neighbors for the query point.
+     * @brief Retrieves the k-nearest neighbors for the query point.
      *
      * @param point the query point.
      * @param k the number of nearest neighbors to search for.
      * @param sort_results if true, the neighbors will be sorted by distances in ascending order.
-     * @return the k nearest neighbors.
+     * @return the k-nearest neighbors.
      */
-    virtual std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> query(
-        const Eigen::Ref<const Matrix> &point, int k, bool sort_results = true) const = 0;
+    virtual std::pair<Vector, Vector> query(const Eigen::Ref<const Vector> &point, int k,
+                                            bool sort_results = true) const = 0;
 
     /**
      * @brief Retrieves all the neighbors of the query point in the specified radius.
@@ -89,13 +90,14 @@ public:
      * @param sort_results if true, the neighbors will be sorted by distances in ascending order.
      * @return the nearest neighbors in the specified radius.
      */
-    virtual std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> queryRadius(
-        const Eigen::Ref<const Matrix> &point, double radius, bool sort_results = false) const = 0;
+    virtual std::pair<Vector, Vector> queryRadius(const Eigen::Ref<const Vector> &point,
+                                                  double radius,
+                                                  bool sort_results = false) const = 0;
 
 protected:
     void validate(int data_size, int k, double radius, bool k_nearest) const;
 
-    std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> processNeighbors(
+    std::pair<Vector, Vector> processNeighbors(
         int k, bool sort_results, std::vector<std::pair<double, int>> *neighbors,
         std::vector<std::pair<double, int>> *bound_neighbors) const;
 };
@@ -111,17 +113,16 @@ public:
      * @param x the dataset to search in.
      * @param metric the distance metric.
      */
-    Bruteforce(const Eigen::Ref<Matrix> &x, const std::string &metric = "euclidean");
+    Bruteforce(const Eigen::Ref<const Matrix> &x, const std::string &metric = "euclidean");
 
-    std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> query(
-        const Eigen::Ref<const Matrix> &point, int k, bool sort_results = true) const override;
+    std::pair<Vector, Vector> query(const Eigen::Ref<const Vector> &point, int k,
+                                    bool sort_results = true) const override;
 
-    std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> queryRadius(
-        const Eigen::Ref<const Matrix> &point, double radius,
-        bool sort_results = false) const override;
+    std::pair<Vector, Vector> queryRadius(const Eigen::Ref<const Vector> &point, double radius,
+                                          bool sort_results = false) const override;
 
 private:
-    const Eigen::Ref<Matrix> &data_;
+    const Eigen::Ref<const Matrix> data_;
     Metric distance_;
 };
 

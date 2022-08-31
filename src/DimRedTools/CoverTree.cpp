@@ -1,6 +1,8 @@
 #include "DimRedTools/CoverTree.hpp"
 
-dim_red::CoverTree::CoverTree(const Eigen::Ref<Matrix> &x, double base, const std::string &metric)
+namespace dim_red {
+
+CoverTree::CoverTree(const Eigen::Ref<const Matrix> &x, double base, const std::string &metric)
     : data_(x),
       distance_(getMetricByName(metric)),
       base_(base),
@@ -8,14 +10,14 @@ dim_red::CoverTree::CoverTree(const Eigen::Ref<Matrix> &x, double base, const st
       root_(build()) {
 }
 
-dim_red::CoverTree::Node dim_red::CoverTree::build() {
+CoverTree::Node CoverTree::build() {
     if (data_.rows() == 0) {
         throw std::invalid_argument("Dataset is empty");
     }
     std::vector<DistanceSet> distance_sets;
     distance_sets.reserve(static_cast<size_t>(data_.rows() - 1));
-    std::vector<DistanceSet*> point_set(static_cast<size_t>(data_.rows() - 1));
-    std::vector<DistanceSet*> consumed_set;
+    std::vector<DistanceSet *> point_set(static_cast<size_t>(data_.rows() - 1));
+    std::vector<DistanceSet *> consumed_set;
     double max_distance = 0.0;
 
     for (int i = 1; i < data_.rows(); ++i) {
@@ -29,9 +31,9 @@ dim_red::CoverTree::Node dim_red::CoverTree::build() {
                        &consumed_set);
 }
 
-dim_red::CoverTree::Node dim_red::CoverTree::batchInsert(
-    int point, int max_scale, int top_scale, std::vector<DistanceSet*> *point_set,
-    std::vector<DistanceSet*> *consumed_set) const {
+CoverTree::Node CoverTree::batchInsert(int point, int max_scale, int top_scale,
+                                       std::vector<DistanceSet *> *point_set,
+                                       std::vector<DistanceSet *> *consumed_set) const {
     if (point_set->empty()) {
         return {point};
     } else {
@@ -45,7 +47,7 @@ dim_red::CoverTree::Node dim_red::CoverTree::batchInsert(
             point_set->clear();
             return {point, 0.0, children};
         } else {
-            std::vector<DistanceSet*> far;
+            std::vector<DistanceSet *> far;
             split(max_scale, point_set, &far);  // O(|point_set|)
 
             Node child = batchInsert(point, next_scale, top_scale, point_set, consumed_set);
@@ -55,28 +57,28 @@ dim_red::CoverTree::Node dim_red::CoverTree::batchInsert(
                 return child;
             } else {
                 std::vector<Node> children{child};
-                std::vector<DistanceSet*> new_point_set;
-                std::vector<DistanceSet*> new_consumed_set;
+                std::vector<DistanceSet *> new_point_set;
+                std::vector<DistanceSet *> new_consumed_set;
 
                 while (!point_set->empty()) {  // O(|point_set| * .size())
-                    DistanceSet* set = point_set->back();
+                    DistanceSet *set = point_set->back();
                     point_set->pop_back();
                     consumed_set->push_back(set);
 
                     distanceSplit(set->point, max_scale, point_set,
-                                  &new_point_set);                                // O(|point_set|)
+                                  &new_point_set);                               // O(|point_set|)
                     distanceSplit(set->point, max_scale, &far, &new_point_set);  // O(|far|)
 
                     children.push_back(batchInsert(set->point, next_scale, top_scale,
                                                    &new_point_set, &new_consumed_set));
 
                     double f_max = getCoverRadius(max_scale);
-                    for (DistanceSet* ds : new_point_set) {  // O(|new_point_set|)
+                    for (DistanceSet *ds : new_point_set) {  // O(|new_point_set|)
                         ds->distances.pop_back();
                         (ds->distances.back() <= f_max ? *point_set : far).push_back(ds);
                     }
 
-                    for (DistanceSet* ds : new_consumed_set) {  // O(|new_point_set|)
+                    for (DistanceSet *ds : new_consumed_set) {  // O(|new_point_set|)
                         ds->distances.pop_back();
                         consumed_set->push_back(ds);
                     }
@@ -93,38 +95,37 @@ dim_red::CoverTree::Node dim_red::CoverTree::batchInsert(
     }
 }
 
-double dim_red::CoverTree::getCoverRadius(int scale) const {
+double CoverTree::getCoverRadius(int scale) const {
     return pow(base_, scale);
 }
 
-int dim_red::CoverTree::getScale(double value) const {
+int CoverTree::getScale(double value) const {
     return static_cast<int>(ceil(inv_log_base_ * log(value)));
 }
 
-double dim_red::CoverTree::maxDistance(const std::vector<DistanceSet*> &v) const {
+double CoverTree::maxDistance(const std::vector<DistanceSet *> &v) const {
     double max = 0.0;
-    for (const DistanceSet* const set : v) {
+    for (const DistanceSet *const set : v) {
         max = std::max(max, set->distances.back());
     }
     return max;
 }
 
-void dim_red::CoverTree::split(int max_scale, std::vector<DistanceSet*> *point_set,
-                               std::vector<DistanceSet*> *far_set) const {
+void CoverTree::split(int max_scale, std::vector<DistanceSet *> *point_set,
+                      std::vector<DistanceSet *> *far_set) const {
     double f_max = getCoverRadius(max_scale);
-    std::vector<DistanceSet*> new_set;
-    for (DistanceSet* ds : *point_set) {
+    std::vector<DistanceSet *> new_set;
+    for (DistanceSet *ds : *point_set) {
         (ds->distances.back() <= f_max ? new_set : *far_set).push_back(ds);
     }
     *point_set = new_set;
 }
 
-void dim_red::CoverTree::distanceSplit(int new_point, int max_scale,
-                                       std::vector<DistanceSet*> *point_set,
-                                       std::vector<DistanceSet*> *new_point_set) const {
+void CoverTree::distanceSplit(int new_point, int max_scale, std::vector<DistanceSet *> *point_set,
+                              std::vector<DistanceSet *> *new_point_set) const {
     double f_max = getCoverRadius(max_scale);
-    std::vector<DistanceSet*> new_set;
-    for (DistanceSet* ds : *point_set) {
+    std::vector<DistanceSet *> new_set;
+    for (DistanceSet *ds : *point_set) {
         double new_distance = distance_(data_.row(new_point), data_.row(ds->point));
         if (new_distance <= f_max) {
             ds->distances.push_back(new_distance);
@@ -134,25 +135,25 @@ void dim_red::CoverTree::distanceSplit(int new_point, int max_scale,
     *point_set = new_set;
 }
 
-std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> dim_red::CoverTree::query(
-    const Eigen::Ref<const Matrix> &point, int k, bool sort_results) const {
+std::pair<Vector, Vector> CoverTree::query(const Eigen::Ref<const Vector> &point, int k,
+                                           bool sort_results) const {
     return search(point, k, 0.0, true, sort_results);
 }
 
-std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> dim_red::CoverTree::queryRadius(
-    const Eigen::Ref<const Matrix> &point, double radius, bool sort_results) const {
+std::pair<Vector, Vector> CoverTree::queryRadius(const Eigen::Ref<const Vector> &point,
+                                                 double radius, bool sort_results) const {
     return search(point, 1, radius, false, sort_results);
 }
 
-std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> dim_red::CoverTree::search(
-    const Eigen::Ref<const Matrix> &point, int k, double radius, bool k_nearest,
-    bool sort_results) const {
+std::pair<Vector, Vector> CoverTree::search(const Eigen::Ref<const Vector> &point, int k,
+                                            double radius, bool k_nearest,
+                                            bool sort_results) const {
     validate(static_cast<int>(data_.rows()), k, radius, k_nearest);
     double current_distance = distance_(data_.row(0), point);
 
     // If root is the only node.
     if (k_nearest && root_.children.empty()) {
-        return {Eigen::RowVectorXd{{current_distance}}, Eigen::RowVectorXd{{0}}};
+        return {Vector{{current_distance}}, Vector{{0}}};
     }
 
     std::vector<DistanceNode> current_cover_set{{current_distance, &root_}};
@@ -200,3 +201,5 @@ std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> dim_red::CoverTree::search(
     }
     return processNeighbors(k_nearest ? k : INT_MAX, sort_results, &neighbors, &bound_neighbors);
 }
+
+}  // namespace dim_red
