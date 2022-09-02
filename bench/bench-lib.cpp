@@ -1,11 +1,13 @@
+#include <chrono>
+#include <iostream>
 #include "doctest/doctest.h"
-#include <nanobench.h>
 #include "DimRedTools/CoverTree.hpp"
 #include "DimRedTools/tests/_testdata.hpp"
 
+Matrix data = testDataset(10000, 10);
+
 TEST_CASE("CoverTree_Construction") {
-    ankerl::nanobench::Bench().run("CoverTree_1000x10", [&]() {
-        Matrix data = testDataset(1000, 10);
-        dim_red::CoverTree tree(data);
-    });
+    clock_t clock_1 = clock();
+    dim_red::CoverTree tree(data);
+    std::cout << static_cast<double>(clock() - clock_1) / CLOCKS_PER_SEC * 1000 << " ms";
 }

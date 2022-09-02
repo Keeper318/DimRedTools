@@ -31,6 +31,8 @@ public:
     CoverTree(const Eigen::Ref<const Matrix> &x, double base = 1.3,
               const std::string &metric = "euclidean");
 
+    ~CoverTree();
+
     std::pair<Vector, Vector> query(const Eigen::Ref<const Vector> &point, int k,
                                     bool sort_results = true) const override;
 
@@ -41,12 +43,16 @@ private:
     struct Node {
         const int point;
         const double max_distance = 0.0;
-        const std::vector<Node> children{};
+        const std::vector<Node *> *const children = nullptr;
+
+        Node(const Node &) = delete;
     };
 
     struct DistanceSet {
         const int point;
         std::vector<double> distances;
+
+        DistanceSet(const DistanceSet &) = delete;
     };
 
     struct DistanceNode {
@@ -54,10 +60,13 @@ private:
         const Node *node;
     };
 
-    Node build();
+    void deleteNode(Node *node) const;
 
-    Node batchInsert(int point, int max_scale, int top_scale, std::vector<DistanceSet *> *point_set,
-                     std::vector<DistanceSet *> *consumed_set) const;
+    Node *build();
+
+    Node *batchInsert(int point, int max_scale, int top_scale,
+                      std::vector<DistanceSet *> *point_set,
+                      std::vector<DistanceSet *> *consumed_set) const;
 
     double getCoverRadius(int scale) const;
 
@@ -78,7 +87,7 @@ private:
     Metric distance_;
     double base_;
     double inv_log_base_;
-    Node root_;
+    Node *root_;
 };
 
 }  // namespace dim_red

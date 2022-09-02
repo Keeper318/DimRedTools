@@ -7,7 +7,7 @@
 -----------
 
 DimRedTools: A set of algorithms and data structures for dimensionality reduction
-===============================================
+=================================================================================
 
 .. note::
 
