@@ -1,6 +1,7 @@
 #include "dimredtools_pybind/dimredtools_pybind.hpp"
 #include "dimredtools_pybind/docstring/docstring.hpp"
 
+using dim_red::CompressedCoverTree;
 using dim_red::CoverTree;
 using dim_red::docstring::functionDocInject;
 
@@ -42,6 +43,10 @@ PYBIND11_MODULE(dimredtools_pybind, m) {
              "Retrieves all the neighbors of the query point in the specified radius.");
 
     py::class_<CoverTree, NearestNeighbors>(m, "CoverTree")
-        .def(py::init<const Eigen::Ref<dim_red::Matrix>&, double, const std::string&>(), "x"_a,
-             "base"_a = 1.3, "metric"_a = "euclidean");
+        .def(py::init<const Eigen::Ref<const dim_red::Matrix>&, double, const std::string&>(),
+             "x"_a, "base"_a = 1.3, "metric"_a = "euclidean");
+
+    py::class_<CompressedCoverTree, NearestNeighbors>(m, "CompressedCoverTree")
+        .def(py::init<const Eigen::Ref<const dim_red::Matrix>&, double, const std::string&>(),
+             "x"_a, "base"_a = 1.3, "metric"_a = "euclidean");
 }

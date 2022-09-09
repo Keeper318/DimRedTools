@@ -153,25 +153,25 @@ void CoverTree::distanceSplit(int new_point, int max_scale, std::vector<Distance
     *point_set = std::move(new_set);
 }
 
-std::pair<Vector, Vector> CoverTree::query(const Eigen::Ref<const Vector> &point, int k,
-                                           bool sort_results) const {
+std::pair<Vector, IntVector> CoverTree::query(const Eigen::Ref<const Vector> &point, int k,
+                                              bool sort_results) const {
     return search(point, k, 0.0, true, sort_results);
 }
 
-std::pair<Vector, Vector> CoverTree::queryRadius(const Eigen::Ref<const Vector> &point,
-                                                 double radius, bool sort_results) const {
+std::pair<Vector, IntVector> CoverTree::queryRadius(const Eigen::Ref<const Vector> &point,
+                                                    double radius, bool sort_results) const {
     return search(point, 1, radius, false, sort_results);
 }
 
-std::pair<Vector, Vector> CoverTree::search(const Eigen::Ref<const Vector> &point, int k,
-                                            double radius, bool k_nearest,
-                                            bool sort_results) const {
+std::pair<Vector, IntVector> CoverTree::search(const Eigen::Ref<const Vector> &point, int k,
+                                               double radius, bool k_nearest,
+                                               bool sort_results) const {
     validate(static_cast<int>(data_.rows()), k, radius, k_nearest);
     double current_distance = distance_(data_.row(0), point);
 
     // If root is the only node.
     if (k_nearest && root_->children == nullptr) {
-        return {Vector{{current_distance}}, Vector{{0}}};
+        return {Vector{{current_distance}}, IntVector{{0}}};
     }
 
     std::vector<DistanceNode> current_cover_set{{current_distance, root_}};

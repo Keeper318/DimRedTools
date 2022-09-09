@@ -33,11 +33,11 @@ public:
 
     ~CoverTree();
 
-    std::pair<Vector, Vector> query(const Eigen::Ref<const Vector> &point, int k,
-                                    bool sort_results = true) const override;
+    std::pair<Vector, IntVector> query(const Eigen::Ref<const Vector> &point, int k,
+                                       bool sort_results = true) const override;
 
-    std::pair<Vector, Vector> queryRadius(const Eigen::Ref<const Vector> &point, double radius,
-                                          bool sort_results = false) const override;
+    std::pair<Vector, IntVector> queryRadius(const Eigen::Ref<const Vector> &point, double radius,
+                                             bool sort_results = false) const override;
 
 private:
     struct Node {
@@ -80,8 +80,8 @@ private:
     void distanceSplit(int new_point, int max_scale, std::vector<DistanceSet *> *point_set,
                        std::vector<DistanceSet *> *new_point_set) const;
 
-    std::pair<Vector, Vector> search(const Eigen::Ref<const Vector> &point, int k, double radius,
-                                     bool k_nearest, bool sort_results) const;
+    std::pair<Vector, IntVector> search(const Eigen::Ref<const Vector> &point, int k, double radius,
+                                        bool k_nearest, bool sort_results) const;
 
     const Eigen::Ref<const Matrix> data_;
     Metric distance_;

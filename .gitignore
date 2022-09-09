@@ -8,7 +8,6 @@ docs/.buildinfo
 docs/_sources
 docs/objects.inv
 
-
 # build directories
 cmake-build
 cmake-build-debug
@@ -132,6 +131,9 @@ venv.bak/
 
 # Rope project settings
 .ropeproject
+
+# CLion project settings
+.idea
 
 # mkdocs documentation
 /site

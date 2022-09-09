@@ -27,7 +27,7 @@ void NearestNeighbors::validate(int data_size, int k, double radius, bool k_near
     }
 }
 
-std::pair<Vector, Vector> NearestNeighbors::processNeighbors(
+std::pair<Vector, IntVector> NearestNeighbors::processNeighbors(
     int k, bool sort_results, std::vector<std::pair<double, int>> *neighbors,
     std::vector<std::pair<double, int>> *bound_neighbors) const {
     while (!bound_neighbors->empty() && static_cast<int>(neighbors->size()) < k) {
@@ -37,7 +37,7 @@ std::pair<Vector, Vector> NearestNeighbors::processNeighbors(
     if (sort_results) {
         std::sort(neighbors->begin(), neighbors->end());
     }
-    std::pair<Vector, Vector> result{Vector(neighbors->size()), Vector(neighbors->size())};
+    std::pair<Vector, IntVector> result{Vector(neighbors->size()), IntVector(neighbors->size())};
     std::transform(neighbors->begin(), neighbors->end(), result.first.begin(),
                    [](auto &result) { return result.first; });
     std::transform(neighbors->begin(), neighbors->end(), result.second.begin(),
@@ -52,8 +52,8 @@ Bruteforce::Bruteforce(const Eigen::Ref<const Matrix> &x, const std::string &met
     }
 }
 
-std::pair<Vector, Vector> Bruteforce::query(const Eigen::Ref<const Vector> &point, int k,
-                                            bool sort_results) const {
+std::pair<Vector, IntVector> Bruteforce::query(const Eigen::Ref<const Vector> &point, int k,
+                                               bool sort_results) const {
     validate(static_cast<int>(data_.rows()), k, 0.0, true);
     NeighborsHeap<double> heap(static_cast<size_t>(k));
     Vector distances(data_.rows());
@@ -74,8 +74,8 @@ std::pair<Vector, Vector> Bruteforce::query(const Eigen::Ref<const Vector> &poin
     return processNeighbors(k, sort_results, &neighbors, &bound_neighbors);
 }
 
-std::pair<Vector, Vector> Bruteforce::queryRadius(const Eigen::Ref<const Vector> &point,
-                                                  double radius, bool sort_results) const {
+std::pair<Vector, IntVector> Bruteforce::queryRadius(const Eigen::Ref<const Vector> &point,
+                                                     double radius, bool sort_results) const {
     validate(static_cast<int>(data_.rows()), 1, radius, false);
     std::vector<std::pair<double, int>> neighbors;
     std::vector<std::pair<double, int>> bound_neighbors;

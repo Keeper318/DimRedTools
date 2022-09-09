@@ -1,5 +1,5 @@
 #!/bin/bash
-python scripts/manage_versions.py --bump patch
+python scripts/manage_versions.py --bump minor
 pip install .
 cd src_docs && python make_docs.py && cd ..
 git status

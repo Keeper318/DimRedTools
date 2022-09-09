@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Class Bruteforce &mdash; DimRedTools 0.1.0 documentation</title>
+  <title>Class Bruteforce &mdash; DimRedTools 0.2.0 documentation</title>
       <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Class CoverTree" href="classdim__red_1_1_cover_tree.html" />
+    <link rel="next" title="Class CompressedCoverTree" href="classdim__red_1_1_compressed_cover_tree.html" />
     <link rel="prev" title="Struct CoverTree::Node" href="structdim__red_1_1_cover_tree_1_1_node.html" /> 
 </head>
 
@@ -32,7 +32,7 @@
             <a href="../index.html" class="icon icon-home"> DimRedTools
           </a>
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -65,10 +65,13 @@
 <li class="toctree-l2 current"><a class="reference internal" href="cpp_library_root.html#full-api">Full API</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="cpp_library_root.html#namespaces">Namespaces</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="cpp_library_root.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html">Struct CompressedCoverTree::CoverSetEntry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_node.html">Struct CompressedCoverTree::Node</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_node.html">Struct CoverTree::DistanceNode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_set.html">Struct CoverTree::DistanceSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_node.html">Struct CoverTree::Node</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Class Bruteforce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_compressed_cover_tree.html">Class CompressedCoverTree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_cover_tree.html">Class CoverTree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_nearest_neighbors.html">Class NearestNeighbors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_neighbors_heap.html">Template Class NeighborsHeap</a></li>
@@ -168,7 +171,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK7dim_red10Bruteforce5queryERKN5Eigen3RefIK6VectorEEib">
-<span class="target" id="classdim__red_1_1_bruteforce_1a062db7abcdd9605c8f77b942c75a35f8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">query</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">point</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sort_results</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK7dim_red10Bruteforce5queryERKN5Eigen3RefIK6VectorEEib" title="Permalink to this definition"></a><br /></dt>
+<span class="target" id="classdim__red_1_1_bruteforce_1adfbf1b24c431372e63f3fd9b51adcbef"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a7f1ea1f88e05db600f4d889dfab40fbf.html#_CPPv4N7dim_red9IntVectorE" title="dim_red::IntVector"><span class="n"><span class="pre">IntVector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">query</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">point</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">k</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sort_results</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">true</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK7dim_red10Bruteforce5queryERKN5Eigen3RefIK6VectorEEib" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Retrieves the k-nearest neighbors for the query point. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -179,14 +182,14 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>the k-nearest neighbors. </p>
+<dd class="field-even"><p>the k-nearest neighbors: {distances, indices}. </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK7dim_red10Bruteforce11queryRadiusERKN5Eigen3RefIK6VectorEEdb">
-<span class="target" id="classdim__red_1_1_bruteforce_1ad44f43b11a7ea42099404457df60d118"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">queryRadius</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">point</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">radius</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sort_results</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK7dim_red10Bruteforce11queryRadiusERKN5Eigen3RefIK6VectorEEdb" title="Permalink to this definition"></a><br /></dt>
+<span class="target" id="classdim__red_1_1_bruteforce_1aadbdc344d804b4a6beb235002c14998e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a7f1ea1f88e05db600f4d889dfab40fbf.html#_CPPv4N7dim_red9IntVectorE" title="dim_red::IntVector"><span class="n"><span class="pre">IntVector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">queryRadius</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">Eigen</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Ref</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE" title="dim_red::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">point</span></span>, <span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">radius</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">sort_results</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK7dim_red10Bruteforce11queryRadiusERKN5Eigen3RefIK6VectorEEdb" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Retrieves all the neighbors of the query point in the specified radius. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -197,7 +200,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>the nearest neighbors in the specified radius. </p>
+<dd class="field-even"><p>the nearest neighbors in the specified radius: {distances, indices}. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -213,7 +216,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="structdim__red_1_1_cover_tree_1_1_node.html" class="btn btn-neutral float-left" title="Struct CoverTree::Node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="classdim__red_1_1_cover_tree.html" class="btn btn-neutral float-right" title="Class CoverTree" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="classdim__red_1_1_compressed_cover_tree.html" class="btn btn-neutral float-right" title="Class CompressedCoverTree" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

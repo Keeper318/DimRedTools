@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C++ Library API &mdash; DimRedTools 0.1.0 documentation</title>
+  <title>C++ Library API &mdash; DimRedTools 0.2.0 documentation</title>
       <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -32,7 +32,7 @@
             <a href="../index.html" class="icon icon-home"> DimRedTools
           </a>
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -68,10 +68,13 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#classes-and-structs">Classes and Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html">Struct CompressedCoverTree::CoverSetEntry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_node.html">Struct CompressedCoverTree::Node</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_node.html">Struct CoverTree::DistanceNode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_set.html">Struct CoverTree::DistanceSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_node.html">Struct CoverTree::Node</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_bruteforce.html">Class Bruteforce</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_compressed_cover_tree.html">Class CompressedCoverTree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_cover_tree.html">Class CoverTree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_nearest_neighbors.html">Class NearestNeighbors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_neighbors_heap.html">Template Class NeighborsHeap</a></li>
@@ -84,6 +87,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#typedefs">Typedefs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a7f1ea1f88e05db600f4d889dfab40fbf.html">Typedef dim_red::IntVector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a54b732889aff7d6ffa2d39f32b5c676f.html">Typedef dim_red::Matrix</a></li>
 <li class="toctree-l4"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1ab2c3e1daa4bbe4a8b9dba362059d9cb4.html">Typedef dim_red::Metric</a></li>
 <li class="toctree-l4"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html">Typedef dim_red::Vector</a></li>
@@ -149,7 +153,7 @@
 <ul class="treeView" id="class-treeView">
   <li>
     <ul class="collapsibleList">
-      <li class="lastChild">Namespace <a href="namespace_dim_red.html#namespace-dim-red">dim_red</a><ul><li>Class <a href="classdim__red_1_1_bruteforce.html#exhale-class-classdim-red-1-1-bruteforce">Bruteforce</a></li><li>Class <a href="classdim__red_1_1_cover_tree.html#exhale-class-classdim-red-1-1-cover-tree">CoverTree</a><ul><li>Struct <a href="structdim__red_1_1_cover_tree_1_1_distance_node.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-node">CoverTree::DistanceNode</a></li><li>Struct <a href="structdim__red_1_1_cover_tree_1_1_distance_set.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-set">CoverTree::DistanceSet</a></li><li class="lastChild">Struct <a href="structdim__red_1_1_cover_tree_1_1_node.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-node">CoverTree::Node</a></li></ul></li><li>Class <a href="classdim__red_1_1_nearest_neighbors.html#exhale-class-classdim-red-1-1-nearest-neighbors">NearestNeighbors</a></li><li class="lastChild">Template Class <a href="classdim__red_1_1_neighbors_heap.html#exhale-class-classdim-red-1-1-neighbors-heap">NeighborsHeap</a></li></ul></li>
+      <li class="lastChild">Namespace <a href="namespace_dim_red.html#namespace-dim-red">dim_red</a><ul><li>Class <a href="classdim__red_1_1_bruteforce.html#exhale-class-classdim-red-1-1-bruteforce">Bruteforce</a></li><li>Class <a href="classdim__red_1_1_compressed_cover_tree.html#exhale-class-classdim-red-1-1-compressed-cover-tree">CompressedCoverTree</a><ul><li>Struct <a href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html#exhale-struct-structdim-red-1-1-compressed-cover-tree-1-1-cover-set-entry">CompressedCoverTree::CoverSetEntry</a></li><li class="lastChild">Struct <a href="structdim__red_1_1_compressed_cover_tree_1_1_node.html#exhale-struct-structdim-red-1-1-compressed-cover-tree-1-1-node">CompressedCoverTree::Node</a></li></ul></li><li>Class <a href="classdim__red_1_1_cover_tree.html#exhale-class-classdim-red-1-1-cover-tree">CoverTree</a><ul><li>Struct <a href="structdim__red_1_1_cover_tree_1_1_distance_node.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-node">CoverTree::DistanceNode</a></li><li>Struct <a href="structdim__red_1_1_cover_tree_1_1_distance_set.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-set">CoverTree::DistanceSet</a></li><li class="lastChild">Struct <a href="structdim__red_1_1_cover_tree_1_1_node.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-node">CoverTree::Node</a></li></ul></li><li>Class <a href="classdim__red_1_1_nearest_neighbors.html#exhale-class-classdim-red-1-1-nearest-neighbors">NearestNeighbors</a></li><li class="lastChild">Template Class <a href="classdim__red_1_1_neighbors_heap.html#exhale-class-classdim-red-1-1-neighbors-heap">NeighborsHeap</a></li></ul></li>
     </ul>
   </li><!-- only tree view element -->
 </ul><!-- /treeView class-treeView --></section>
@@ -158,7 +162,7 @@
 <ul class="treeView" id="file-treeView">
   <li>
     <ul class="collapsibleList">
-      <li class="lastChild">Directory <a href="dir_include.html#dir-include">include</a><ul><li class="lastChild">Directory <a href="dir_include_DimRedTools.html#dir-include-DimRedTools">DimRedTools</a><ul><li>Directory <a href="dir_include_DimRedTools_tests.html#dir-include-DimRedTools-tests">tests</a><ul><li>File <a href="file_include_DimRedTools_tests__testdata.hpp.html#file-include-DimRedTools-tests-testdata.hpp">_testdata.hpp</a></li><li class="lastChild">File <a href="file_include_DimRedTools_tests__treetest.hpp.html#file-include-DimRedTools-tests-treetest.hpp">_treetest.hpp</a></li></ul></li><li>File <a href="file_include_DimRedTools_CoverTree.hpp.html#file-include-DimRedTools-CoverTree.hpp">CoverTree.hpp</a></li><li class="lastChild">File <a href="file_include_DimRedTools_DimRedTools.hpp.html#file-include-DimRedTools-DimRedTools.hpp">DimRedTools.hpp</a></li></ul></li></ul></li>
+      <li class="lastChild">Directory <a href="dir_include.html#dir-include">include</a><ul><li class="lastChild">Directory <a href="dir_include_DimRedTools.html#dir-include-DimRedTools">DimRedTools</a><ul><li>Directory <a href="dir_include_DimRedTools_tests.html#dir-include-DimRedTools-tests">tests</a><ul><li>File <a href="file_include_DimRedTools_tests__testdata.hpp.html#file-include-DimRedTools-tests-testdata.hpp">_testdata.hpp</a></li><li class="lastChild">File <a href="file_include_DimRedTools_tests__treetest.hpp.html#file-include-DimRedTools-tests-treetest.hpp">_treetest.hpp</a></li></ul></li><li>File <a href="file_include_DimRedTools_CompressedCoverTree.hpp.html#file-include-DimRedTools-CompressedCoverTree.hpp">CompressedCoverTree.hpp</a></li><li>File <a href="file_include_DimRedTools_CoverTree.hpp.html#file-include-DimRedTools-CoverTree.hpp">CoverTree.hpp</a></li><li class="lastChild">File <a href="file_include_DimRedTools_DimRedTools.hpp.html#file-include-DimRedTools-DimRedTools.hpp">DimRedTools.hpp</a></li></ul></li></ul></li>
     </ul>
   </li><!-- only tree view element -->
 </ul><!-- /treeView file-treeView --></section>
@@ -179,6 +183,24 @@
 </section>
 <section id="classes-and-structs">
 <h3>Classes and Structs<a class="headerlink" href="#classes-and-structs" title="Permalink to this headline"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html">Struct CompressedCoverTree::CoverSetEntry</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_node.html">Struct CompressedCoverTree::Node</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_node.html#nested-relationships">Nested Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_node.html#struct-documentation">Struct Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_node.html">Struct CoverTree::DistanceNode</a><ul>
@@ -214,6 +236,22 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_bruteforce.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classdim__red_1_1_compressed_cover_tree.html">Class CompressedCoverTree</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_compressed_cover_tree.html#nested-relationships">Nested Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classdim__red_1_1_compressed_cover_tree.html#nested-types">Nested Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_compressed_cover_tree.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classdim__red_1_1_compressed_cover_tree.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_compressed_cover_tree.html#class-documentation">Class Documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -284,6 +322,14 @@
 </section>
 <section id="typedefs">
 <h3>Typedefs<a class="headerlink" href="#typedefs" title="Permalink to this headline"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a7f1ea1f88e05db600f4d889dfab40fbf.html">Typedef dim_red::IntVector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a7f1ea1f88e05db600f4d889dfab40fbf.html#typedef-documentation">Typedef Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a54b732889aff7d6ffa2d39f32b5c676f.html">Typedef dim_red::Matrix</a><ul>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Namespace dim_red &mdash; DimRedTools 0.1.0 documentation</title>
+  <title>Namespace dim_red &mdash; DimRedTools 0.2.0 documentation</title>
       <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Struct CoverTree::DistanceNode" href="structdim__red_1_1_cover_tree_1_1_distance_node.html" />
+    <link rel="next" title="Struct CompressedCoverTree::CoverSetEntry" href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html" />
     <link rel="prev" title="C++ Library API" href="cpp_library_root.html" /> 
 </head>
 
@@ -32,7 +32,7 @@
             <a href="../index.html" class="icon icon-home"> DimRedTools
           </a>
               <div class="version">
-                0.1.0
+                0.2.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -137,10 +137,13 @@
 <section id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h2>
 <ul class="simple">
+<li><p><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html#exhale-struct-structdim-red-1-1-compressed-cover-tree-1-1-cover-set-entry"><span class="std std-ref">Struct CompressedCoverTree::CoverSetEntry</span></a></p></li>
+<li><p><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_node.html#exhale-struct-structdim-red-1-1-compressed-cover-tree-1-1-node"><span class="std std-ref">Struct CompressedCoverTree::Node</span></a></p></li>
 <li><p><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_node.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-node"><span class="std std-ref">Struct CoverTree::DistanceNode</span></a></p></li>
 <li><p><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_set.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-set"><span class="std std-ref">Struct CoverTree::DistanceSet</span></a></p></li>
 <li><p><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_node.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-node"><span class="std std-ref">Struct CoverTree::Node</span></a></p></li>
 <li><p><a class="reference internal" href="classdim__red_1_1_bruteforce.html#exhale-class-classdim-red-1-1-bruteforce"><span class="std std-ref">Class Bruteforce</span></a></p></li>
+<li><p><a class="reference internal" href="classdim__red_1_1_compressed_cover_tree.html#exhale-class-classdim-red-1-1-compressed-cover-tree"><span class="std std-ref">Class CompressedCoverTree</span></a></p></li>
 <li><p><a class="reference internal" href="classdim__red_1_1_cover_tree.html#exhale-class-classdim-red-1-1-cover-tree"><span class="std std-ref">Class CoverTree</span></a></p></li>
 <li><p><a class="reference internal" href="classdim__red_1_1_nearest_neighbors.html#exhale-class-classdim-red-1-1-nearest-neighbors"><span class="std std-ref">Class NearestNeighbors</span></a></p></li>
 <li><p><a class="reference internal" href="classdim__red_1_1_neighbors_heap.html#exhale-class-classdim-red-1-1-neighbors-heap"><span class="std std-ref">Template Class NeighborsHeap</span></a></p></li>
@@ -155,6 +158,7 @@
 <section id="typedefs">
 <h2>Typedefs<a class="headerlink" href="#typedefs" title="Permalink to this headline"></a></h2>
 <ul class="simple">
+<li><p><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a7f1ea1f88e05db600f4d889dfab40fbf.html#exhale-typedef-dim-red-tools-8hpp-1a7f1ea1f88e05db600f4d889dfab40fbf"><span class="std std-ref">Typedef dim_red::IntVector</span></a></p></li>
 <li><p><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a54b732889aff7d6ffa2d39f32b5c676f.html#exhale-typedef-dim-red-tools-8hpp-1a54b732889aff7d6ffa2d39f32b5c676f"><span class="std std-ref">Typedef dim_red::Matrix</span></a></p></li>
 <li><p><a class="reference internal" href="typedef__dim_red_tools_8hpp_1ab2c3e1daa4bbe4a8b9dba362059d9cb4.html#exhale-typedef-dim-red-tools-8hpp-1ab2c3e1daa4bbe4a8b9dba362059d9cb4"><span class="std std-ref">Typedef dim_red::Metric</span></a></p></li>
 <li><p><a class="reference internal" href="typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#exhale-typedef-dim-red-tools-8hpp-1a347fde01ec49b5c994000510a10f36c0"><span class="std std-ref">Typedef dim_red::Vector</span></a></p></li>
@@ -167,7 +171,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="cpp_library_root.html" class="btn btn-neutral float-left" title="C++ Library API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="structdim__red_1_1_cover_tree_1_1_distance_node.html" class="btn btn-neutral float-right" title="Struct CoverTree::DistanceNode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html" class="btn btn-neutral float-right" title="Struct CompressedCoverTree::CoverSetEntry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

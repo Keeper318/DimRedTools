@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Struct CoverTree::DistanceNode &mdash; DimRedTools 0.2.0 documentation</title>
+  <title>Struct CompressedCoverTree::Node &mdash; DimRedTools 0.2.0 documentation</title>
       <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Struct CoverTree::DistanceSet" href="structdim__red_1_1_cover_tree_1_1_distance_set.html" />
-    <link rel="prev" title="Struct CompressedCoverTree::Node" href="structdim__red_1_1_compressed_cover_tree_1_1_node.html" /> 
+    <link rel="next" title="Struct CoverTree::DistanceNode" href="structdim__red_1_1_cover_tree_1_1_distance_node.html" />
+    <link rel="prev" title="Struct CompressedCoverTree::CoverSetEntry" href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -66,8 +66,8 @@
 <li class="toctree-l3"><a class="reference internal" href="cpp_library_root.html#namespaces">Namespaces</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="cpp_library_root.html#classes-and-structs">Classes and Structs</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html">Struct CompressedCoverTree::CoverSetEntry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_compressed_cover_tree_1_1_node.html">Struct CompressedCoverTree::Node</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Struct CoverTree::DistanceNode</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Struct CompressedCoverTree::Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_node.html">Struct CoverTree::DistanceNode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_set.html">Struct CoverTree::DistanceSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_node.html">Struct CoverTree::Node</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_bruteforce.html">Class Bruteforce</a></li>
@@ -100,7 +100,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="cpp_library_root.html">C++ Library API</a> &raquo;</li>
-      <li>Struct CoverTree::DistanceNode</li>
+      <li>Struct CompressedCoverTree::Node</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -133,30 +133,43 @@
     text-align: unset;
 }
 </style>
-<section id="struct-covertree-distancenode">
-<span id="exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-node"></span><h1>Struct CoverTree::DistanceNode<a class="headerlink" href="#struct-covertree-distancenode" title="Permalink to this headline"></a></h1>
+<section id="struct-compressedcovertree-node">
+<span id="exhale-struct-structdim-red-1-1-compressed-cover-tree-1-1-node"></span><h1>Struct CompressedCoverTree::Node<a class="headerlink" href="#struct-compressedcovertree-node" title="Permalink to this headline"></a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_DimRedTools_CoverTree.hpp.html#file-include-dimredtools-covertree-hpp"><span class="std std-ref">File CoverTree.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_include_DimRedTools_CompressedCoverTree.hpp.html#file-include-dimredtools-compressedcovertree-hpp"><span class="std std-ref">File CompressedCoverTree.hpp</span></a></p></li>
 </ul>
 <section id="nested-relationships">
 <h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline"></a></h2>
-<p>This struct is a nested type of <a class="reference internal" href="classdim__red_1_1_cover_tree.html#exhale-class-classdim-red-1-1-cover-tree"><span class="std std-ref">Class CoverTree</span></a>.</p>
+<p>This struct is a nested type of <a class="reference internal" href="classdim__red_1_1_compressed_cover_tree.html#exhale-class-classdim-red-1-1-compressed-cover-tree"><span class="std std-ref">Class CompressedCoverTree</span></a>.</p>
 </section>
 <section id="struct-documentation">
 <h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline"></a></h2>
 <dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N7dim_red9CoverTree12DistanceNodeE">
-<span class="target" id="structdim__red_1_1_cover_tree_1_1_distance_node"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DistanceNode</span></span></span><a class="headerlink" href="#_CPPv4N7dim_red9CoverTree12DistanceNodeE" title="Permalink to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N7dim_red19CompressedCoverTree4NodeE">
+<span class="target" id="structdim__red_1_1_compressed_cover_tree_1_1_node"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Node</span></span></span><a class="headerlink" href="#_CPPv4N7dim_red19CompressedCoverTree4NodeE" title="Permalink to this definition"></a><br /></dt>
 <dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7dim_red19CompressedCoverTree4Node4NodeERK4Node">
+<span class="target" id="structdim__red_1_1_compressed_cover_tree_1_1_node_1a683ce224ffb4e18c31179953fd0809a0"></span><span class="sig-name descname"><span class="n"><span class="pre">Node</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7dim_red19CompressedCoverTree4Node4NodeERK4Node" title="dim_red::CompressedCoverTree::Node::Node"><span class="n"><span class="pre">Node</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N7dim_red19CompressedCoverTree4Node4NodeERK4Node" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N7dim_red9CoverTree12DistanceNode8distanceE">
-<span class="target" id="structdim__red_1_1_cover_tree_1_1_distance_node_1a5040775e641543aa3faffd82dfac804a"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">distance</span></span></span><a class="headerlink" href="#_CPPv4N7dim_red9CoverTree12DistanceNode8distanceE" title="Permalink to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N7dim_red19CompressedCoverTree4Node5pointE">
+<span class="target" id="structdim__red_1_1_compressed_cover_tree_1_1_node_1a069011eac1f9010342a0f386055c23c2"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">point</span></span></span><a class="headerlink" href="#_CPPv4N7dim_red19CompressedCoverTree4Node5pointE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N7dim_red9CoverTree12DistanceNode4nodeE">
-<span class="target" id="structdim__red_1_1_cover_tree_1_1_distance_node_1a3c73224f835219f49090c4f07fa77cc0"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_node.html#_CPPv4N7dim_red9CoverTree4NodeE" title="dim_red::CoverTree::Node"><span class="n"><span class="pre">Node</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">node</span></span></span><a class="headerlink" href="#_CPPv4N7dim_red9CoverTree12DistanceNode4nodeE" title="Permalink to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N7dim_red19CompressedCoverTree4Node5scaleE">
+<span class="target" id="structdim__red_1_1_compressed_cover_tree_1_1_node_1a50453f5e909f0a457472e533ce9cc5cf"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scale</span></span></span><a class="headerlink" href="#_CPPv4N7dim_red19CompressedCoverTree4Node5scaleE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7dim_red19CompressedCoverTree4Node8childrenE">
+<span class="target" id="structdim__red_1_1_compressed_cover_tree_1_1_node_1a759a38450c6e62e39d58822085789e47"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N7dim_red19CompressedCoverTree4NodeE" title="dim_red::CompressedCoverTree::Node"><span class="n"><span class="pre">Node</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">children</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">new</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N7dim_red19CompressedCoverTree4NodeE" title="dim_red::CompressedCoverTree::Node"><span class="n"><span class="pre">Node</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N7dim_red19CompressedCoverTree4Node8childrenE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -169,8 +182,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="structdim__red_1_1_compressed_cover_tree_1_1_node.html" class="btn btn-neutral float-left" title="Struct CompressedCoverTree::Node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="structdim__red_1_1_cover_tree_1_1_distance_set.html" class="btn btn-neutral float-right" title="Struct CoverTree::DistanceSet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html" class="btn btn-neutral float-left" title="Struct CompressedCoverTree::CoverSetEntry" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="structdim__red_1_1_cover_tree_1_1_distance_node.html" class="btn btn-neutral float-right" title="Struct CoverTree::DistanceNode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

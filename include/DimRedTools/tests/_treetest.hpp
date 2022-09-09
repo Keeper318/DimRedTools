@@ -8,14 +8,16 @@
 
 using dim_red::NearestNeighbors;
 using dim_red::Matrix;
+using dim_red::Vector;
+using dim_red::IntVector;
 
 void compare(const NearestNeighbors &test_tree, const NearestNeighbors &correct_tree,
              const Eigen::Ref<Matrix> &x) {
     std::mt19937 generator(0);
     for (int test = 1; test <= 100; ++test) {
         int i = std::uniform_int_distribution(0, static_cast<int>(x.rows()))(generator);
-        std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> test_answer;
-        std::pair<Eigen::RowVectorXd, Eigen::RowVectorXd> correct_answer;
+        std::pair<Vector, IntVector> test_answer;
+        std::pair<Vector, IntVector> correct_answer;
         if (generator() % 2 == 0) {
             int k = std::uniform_int_distribution(1, static_cast<int>(sqrt(x.rows())))(generator);
             std::cout << "Test " << test << ": " << k << " neighbors..." << std::endl;
