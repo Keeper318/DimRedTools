@@ -5,6 +5,7 @@
 
 #include "DimRedTools/CoverTree.hpp"
 #include "DimRedTools/CompressedCoverTree.hpp"
+#include "DimRedTools/MDS.hpp"
 
 namespace py = pybind11;
 using py::literals::operator""_a;

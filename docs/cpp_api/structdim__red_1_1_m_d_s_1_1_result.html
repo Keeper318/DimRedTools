@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Template Class NeighborsHeap &mdash; DimRedTools 0.3.0 documentation</title>
+  <title>Struct MDS::Result &mdash; DimRedTools 0.3.0 documentation</title>
       <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Function dim_red::getMetricByName" href="function__dim_red_tools_8hpp_1a6fa12d3d3cdeb861c130fed73f836092.html" />
-    <link rel="prev" title="Class NearestNeighbors" href="classdim__red_1_1_nearest_neighbors.html" /> 
+    <link rel="next" title="Class Bruteforce" href="classdim__red_1_1_bruteforce.html" />
+    <link rel="prev" title="Struct CoverTree::Node" href="structdim__red_1_1_cover_tree_1_1_node.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -70,13 +70,13 @@
 <li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_node.html">Struct CoverTree::DistanceNode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_distance_set.html">Struct CoverTree::DistanceSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_cover_tree_1_1_node.html">Struct CoverTree::Node</a></li>
-<li class="toctree-l4"><a class="reference internal" href="structdim__red_1_1_m_d_s_1_1_result.html">Struct MDS::Result</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Struct MDS::Result</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_bruteforce.html">Class Bruteforce</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_compressed_cover_tree.html">Class CompressedCoverTree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_cover_tree.html">Class CoverTree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_m_d_s.html">Class MDS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_nearest_neighbors.html">Class NearestNeighbors</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Template Class NeighborsHeap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_neighbors_heap.html">Template Class NeighborsHeap</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="cpp_library_root.html#functions">Functions</a></li>
@@ -102,7 +102,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="cpp_library_root.html">C++ Library API</a> &raquo;</li>
-      <li>Template Class NeighborsHeap</li>
+      <li>Struct MDS::Result</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -135,63 +135,38 @@
     text-align: unset;
 }
 </style>
-<section id="template-class-neighborsheap">
-<span id="exhale-class-classdim-red-1-1-neighbors-heap"></span><h1>Template Class NeighborsHeap<a class="headerlink" href="#template-class-neighborsheap" title="Permalink to this headline"></a></h1>
+<section id="struct-mds-result">
+<span id="exhale-struct-structdim-red-1-1-m-d-s-1-1-result"></span><h1>Struct MDS::Result<a class="headerlink" href="#struct-mds-result" title="Permalink to this headline"></a></h1>
 <ul class="simple">
-<li><p>Defined in <a class="reference internal" href="file_include_DimRedTools_DimRedTools.hpp.html#file-include-dimredtools-dimredtools-hpp"><span class="std std-ref">File DimRedTools.hpp</span></a></p></li>
+<li><p>Defined in <a class="reference internal" href="file_include_DimRedTools_MDS.hpp.html#file-include-dimredtools-mds-hpp"><span class="std std-ref">File MDS.hpp</span></a></p></li>
 </ul>
-<section id="class-documentation">
-<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline"></a></h2>
-<dl class="cpp class">
-<dt class="sig sig-object cpp" id="_CPPv4I0EN7dim_red13NeighborsHeapE">
-<span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classdim__red_1_1_neighbors_heap"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NeighborsHeap</span></span></span><a class="headerlink" href="#_CPPv4I0EN7dim_red13NeighborsHeapE" title="Permalink to this definition"></a><br /></dt>
-<dd><p>A class for tracking k-nearest neighbors. Implemented as a min-heap with a limited size. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Template Parameters</dt>
-<dd class="field-odd"><p><strong>T</strong> – type of distance (usually double) </p>
-</dd>
-</dl>
+<section id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline"></a></h2>
+<p>This struct is a nested type of <a class="reference internal" href="classdim__red_1_1_m_d_s.html#exhale-class-classdim-red-1-1-m-d-s"><span class="std std-ref">Class MDS</span></a>.</p>
+</section>
+<section id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline"></a></h2>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N7dim_red3MDS6ResultE">
+<span class="target" id="structdim__red_1_1_m_d_s_1_1_result"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Result</span></span></span><a class="headerlink" href="#_CPPv4N7dim_red3MDS6ResultE" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7dim_red3MDS6Result6stressE">
+<span class="target" id="structdim__red_1_1_m_d_s_1_1_result_1aa1711142822801ded82453c26554d26e"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stress</span></span></span><a class="headerlink" href="#_CPPv4N7dim_red3MDS6Result6stressE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7dim_red3MDS6Result6n_iterE">
+<span class="target" id="structdim__red_1_1_m_d_s_1_1_result_1afe915908673722845f6ff54e16f7d25f"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">n_iter</span></span></span><a class="headerlink" href="#_CPPv4N7dim_red3MDS6Result6n_iterE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-friends">Friends</p>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N7dim_red13NeighborsHeap13NeighborsHeapE6size_t">
-<span class="target" id="classdim__red_1_1_neighbors_heap_1a98aca3e7f31d456bb2f57cb85adcd557"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NeighborsHeap</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">limit</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7dim_red13NeighborsHeap13NeighborsHeapE6size_t" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Constructor. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>limit</strong> – the maximum heap size. </p>
-</dd>
-<dt class="field-even">Throws</dt>
-<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">invalid_argument</span></span></span> – if the limit is less than or equal to zero. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N7dim_red13NeighborsHeap3addE1T">
-<span class="target" id="classdim__red_1_1_neighbors_heap_1ac86a71065e0a5d8e89d354a9c278f73b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">add</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN7dim_red13NeighborsHeapE" title="dim_red::NeighborsHeap::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7dim_red13NeighborsHeap3addE1T" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Add a new value. Also remove the largest value if the heap size is exceeding the specified limit. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> – a new value. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK7dim_red13NeighborsHeap4peekEv">
-<span class="target" id="classdim__red_1_1_neighbors_heap_1a053a6c22cc8b9ede1d3062145b1fcc7b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN7dim_red13NeighborsHeapE" title="dim_red::NeighborsHeap::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">peek</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7dim_red13NeighborsHeap4peekEv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Returns the largest value in the heap. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>the largest value. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N7dim_red13NeighborsHeap7extractEv">
-<span class="target" id="classdim__red_1_1_neighbors_heap_1a758fff10a4e2b05b17de62dbf720be58"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN7dim_red13NeighborsHeapE" title="dim_red::NeighborsHeap::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">extract</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7dim_red13NeighborsHeap7extractEv" title="Permalink to this definition"></a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N7dim_red3MDS6ResultltERK6ResultRK6Result">
+<span class="target" id="structdim__red_1_1_m_d_s_1_1_result_1a9ddccdab21c35b4b53ecff933552af15"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">friend</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7dim_red3MDS6ResultE" title="dim_red::MDS::Result"><span class="n"><span class="pre">Result</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">lhs</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7dim_red3MDS6ResultE" title="dim_red::MDS::Result"><span class="n"><span class="pre">Result</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7dim_red3MDS6ResultltERK6ResultRK6Result" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 </div>
@@ -204,8 +179,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="classdim__red_1_1_nearest_neighbors.html" class="btn btn-neutral float-left" title="Class NearestNeighbors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="function__dim_red_tools_8hpp_1a6fa12d3d3cdeb861c130fed73f836092.html" class="btn btn-neutral float-right" title="Function dim_red::getMetricByName" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="structdim__red_1_1_cover_tree_1_1_node.html" class="btn btn-neutral float-left" title="Struct CoverTree::Node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classdim__red_1_1_bruteforce.html" class="btn btn-neutral float-right" title="Class Bruteforce" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

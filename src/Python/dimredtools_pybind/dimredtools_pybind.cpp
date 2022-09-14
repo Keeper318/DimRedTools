@@ -3,35 +3,11 @@
 
 using dim_red::CompressedCoverTree;
 using dim_red::CoverTree;
+using dim_red::MDS;
 using dim_red::docstring::functionDocInject;
 
 PYBIND11_MODULE(dimredtools_pybind, m) {
     m.doc() = "Python binding of DimRedTools";
-
-    /*py::bind_vector<std::vector<double>>(m, "VectorDouble", py::buffer_protocol());
-    py::bind_vector<std::vector<int>>(m, "VectorInt", py::buffer_protocol());
-    py::bind_vector<std::vector<std::size_t>>(m, "VectorULongInt", py::buffer_protocol());
-
-    m.def("hello", &dim_red::hello, "name"_a, "Says hello to name");
-    functionDocInject(m, "hello", {{"name", "The name to say hello with"}});
-
-    // You *can* use function overload with same name, but python documentation doesn't support
-    // function overload Here I choose to make multiple function with different names
-    m.def("multiply_by_scalar_double", &dim_red::multiplyByScalar<double>, "vec"_a,
-          "scalar"_a, "Multiplies a double vector");
-    m.def("multiply_by_scalar_int", &dim_red::multiplyByScalar<int>, "vec"_a, "scalar"_a,
-          "Multiplies an int vector");
-    m.def("multiply_by_scalar_size_t", &dim_red::multiplyByScalar<size_t>, "vec"_a,
-          "scalar"_a, "Multiplies a size_t vector");
-    functionDocInject(m, "multiply_by_scalar_double",
-                                 {{"vec", "A list of double numbers "},
-                                  {"scalar", "A scalar number to multiply the list by."}});
-    functionDocInject(m, "multiply_by_scalar_int",
-                                 {{"vec", "A list of int numbers "},
-                                  {"scalar", "A scalar number to multiply the list by."}});
-    functionDocInject(m, "multiply_by_scalar_size_t",
-                                 {{"vec", "A list of size_t numbers "},
-                                  {"scalar", "A scalar number to multiply the list by."}});*/
 
     py::class_<NearestNeighbors, PyNearestNeighbors>(
         m, "NearestNeighbors",
@@ -43,10 +19,22 @@ PYBIND11_MODULE(dimredtools_pybind, m) {
              "Retrieves all the neighbors of the query point in the specified radius.");
 
     py::class_<CoverTree, NearestNeighbors>(m, "CoverTree")
-        .def(py::init<const Eigen::Ref<const dim_red::Matrix>&, double, const std::string&>(),
+        .def(py::init<const Eigen::Ref<const dim_red::Matrix> &, double, const std::string &>(),
              "x"_a, "base"_a = 1.3, "metric"_a = "euclidean");
 
     py::class_<CompressedCoverTree, NearestNeighbors>(m, "CompressedCoverTree")
-        .def(py::init<const Eigen::Ref<const dim_red::Matrix>&, double, const std::string&>(),
+        .def(py::init<const Eigen::Ref<const dim_red::Matrix> &, double, const std::string &>(),
              "x"_a, "base"_a = 1.3, "metric"_a = "euclidean");
+
+    py::class_<MDS>(m, "MDS")
+        .def(py::init<int, int, double, double, int, const std::string &>(), "n_components"_a = 2,
+             "max_iter"_a = 100, "eps"_a = 1e-4, "learning_rate"_a = 0.2, "random_state"_a = 0,
+             "dissimilarity"_a = "euclidean")
+        .def("fit_transform", &MDS::fitTransform, "x"_a, "init"_a = std::nullopt, "Fit mapping.")
+        .def_readonly("stress", &MDS::stress_,
+                      "Stress function value of the ::fit_transform result.")
+        .def_readonly("dissimilarity_matrix", &MDS::dissimilarity_matrix_,
+                      "Matrix of dissimilarities.")
+        .def_readonly("n_iter", &MDS::n_iter_,
+                      "Number of iterations of the ::fit_transform algorithm.");
 }

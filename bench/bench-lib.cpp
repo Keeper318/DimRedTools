@@ -3,7 +3,7 @@
 #include "doctest/doctest.h"
 #include "DimRedTools/CoverTree.hpp"
 #include "DimRedTools/CompressedCoverTree.hpp"
-#include "DimRedTools/tests/_testdata.hpp"
+#include "../tests/cpp/testdata.hpp"
 
 Matrix data = testDataset(10000, 10);
 

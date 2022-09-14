@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; DimRedTools 0.2.0 documentation</title>
+  <title>Index &mdash; DimRedTools 0.3.0 documentation</title>
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -29,7 +29,7 @@
             <a href="index.html" class="icon icon-home"> DimRedTools
           </a>
               <div class="version">
-                0.2.0
+                0.3.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -89,9 +89,11 @@
  <a href="#_"><strong>_</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#Q"><strong>Q</strong></a>
- | <a href="#T"><strong>T</strong></a>
+ | <a href="#S"><strong>S</strong></a>
  
 </div>
 <h2 id="_">_</h2>
@@ -102,6 +104,8 @@
       <ul>
         <li><a href="python_api/dimredtools.CoverTree.html#dimredtools.CoverTree.__init__">(dimredtools.CoverTree method)</a>
 </li>
+        <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.__init__">(dimredtools.MDS method)</a>
+</li>
         <li><a href="python_api/dimredtools.NearestNeighbors.html#dimredtools.NearestNeighbors.__init__">(dimredtools.NearestNeighbors method)</a>
 </li>
       </ul></li>
@@ -111,12 +115,10 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="cpp_api/function___treetest_8hpp_1abf6869bbf5f46280dd1dbf8e9a71030e.html#_CPPv47compareRK16NearestNeighborsRK16NearestNeighborsRKN5Eigen3RefI6MatrixEE">compare (C++ function)</a>
+      <li><a href="python_api/dimredtools.CompressedCoverTree.html#dimredtools.CompressedCoverTree">CompressedCoverTree (class in dimredtools)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="python_api/dimredtools.CompressedCoverTree.html#dimredtools.CompressedCoverTree">CompressedCoverTree (class in dimredtools)</a>
-</li>
       <li><a href="python_api/dimredtools.CoverTree.html#dimredtools.CoverTree">CoverTree (class in dimredtools)</a>
 </li>
   </ul></td>
@@ -125,6 +127,8 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="cpp_api/typedef__dim_red_tools_8hpp_1ae21d210cfecc2f4b11377d9ee17e98d2.html#_CPPv4N7dim_red5ArrayE">dim_red::Array (C++ type)</a>
+</li>
       <li><a href="cpp_api/classdim__red_1_1_bruteforce.html#_CPPv4N7dim_red10BruteforceE">dim_red::Bruteforce (C++ class)</a>
 </li>
       <li><a href="cpp_api/classdim__red_1_1_bruteforce.html#_CPPv4N7dim_red10Bruteforce10BruteforceERKN5Eigen3RefIK6MatrixEERKNSt6stringE">dim_red::Bruteforce::Bruteforce (C++ function)</a>
@@ -175,8 +179,6 @@
 </li>
       <li><a href="cpp_api/structdim__red_1_1_cover_tree_1_1_distance_set.html#_CPPv4N7dim_red9CoverTree11DistanceSet11DistanceSetERK11DistanceSet">dim_red::CoverTree::DistanceSet::DistanceSet (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="cpp_api/structdim__red_1_1_cover_tree_1_1_distance_set.html#_CPPv4N7dim_red9CoverTree11DistanceSet5pointE">dim_red::CoverTree::DistanceSet::point (C++ member)</a>
 </li>
       <li><a href="cpp_api/structdim__red_1_1_cover_tree_1_1_node.html#_CPPv4N7dim_red9CoverTree4NodeE">dim_red::CoverTree::Node (C++ struct)</a>
@@ -187,6 +189,8 @@
 </li>
       <li><a href="cpp_api/structdim__red_1_1_cover_tree_1_1_node.html#_CPPv4N7dim_red9CoverTree4Node4NodeERK4Node">dim_red::CoverTree::Node::Node (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="cpp_api/structdim__red_1_1_cover_tree_1_1_node.html#_CPPv4N7dim_red9CoverTree4Node5pointE">dim_red::CoverTree::Node::point (C++ member)</a>
 </li>
       <li><a href="cpp_api/classdim__red_1_1_cover_tree.html#_CPPv4NK7dim_red9CoverTree5queryERKN5Eigen3RefIK6VectorEEib">dim_red::CoverTree::query (C++ function)</a>
@@ -200,6 +204,26 @@
       <li><a href="cpp_api/typedef__dim_red_tools_8hpp_1a7f1ea1f88e05db600f4d889dfab40fbf.html#_CPPv4N7dim_red9IntVectorE">dim_red::IntVector (C++ type)</a>
 </li>
       <li><a href="cpp_api/typedef__dim_red_tools_8hpp_1a54b732889aff7d6ffa2d39f32b5c676f.html#_CPPv4N7dim_red6MatrixE">dim_red::Matrix (C++ type)</a>
+</li>
+      <li><a href="cpp_api/classdim__red_1_1_m_d_s.html#_CPPv4N7dim_red3MDSE">dim_red::MDS (C++ class)</a>
+</li>
+      <li><a href="cpp_api/classdim__red_1_1_m_d_s.html#_CPPv4N7dim_red3MDS21dissimilarity_matrix_E">dim_red::MDS::dissimilarity_matrix_ (C++ member)</a>
+</li>
+      <li><a href="cpp_api/classdim__red_1_1_m_d_s.html#_CPPv4N7dim_red3MDS12fitTransformERKN5Eigen3RefIK6MatrixEENSt8optionalIKN5Eigen3RefIK6MatrixEEEE">dim_red::MDS::fitTransform (C++ function)</a>
+</li>
+      <li><a href="cpp_api/classdim__red_1_1_m_d_s.html#_CPPv4N7dim_red3MDS3MDSEiiddiRKNSt6stringE">dim_red::MDS::MDS (C++ function)</a>
+</li>
+      <li><a href="cpp_api/classdim__red_1_1_m_d_s.html#_CPPv4N7dim_red3MDS7n_iter_E">dim_red::MDS::n_iter_ (C++ member)</a>
+</li>
+      <li><a href="cpp_api/structdim__red_1_1_m_d_s_1_1_result.html#_CPPv4N7dim_red3MDS6ResultE">dim_red::MDS::Result (C++ struct)</a>
+</li>
+      <li><a href="cpp_api/structdim__red_1_1_m_d_s_1_1_result.html#_CPPv4N7dim_red3MDS6Result6n_iterE">dim_red::MDS::Result::n_iter (C++ member)</a>
+</li>
+      <li><a href="cpp_api/structdim__red_1_1_m_d_s_1_1_result.html#_CPPv4N7dim_red3MDS6ResultltERK6ResultRK6Result">dim_red::MDS::Result::operator&lt; (C++ function)</a>
+</li>
+      <li><a href="cpp_api/structdim__red_1_1_m_d_s_1_1_result.html#_CPPv4N7dim_red3MDS6Result6stressE">dim_red::MDS::Result::stress (C++ member)</a>
+</li>
+      <li><a href="cpp_api/classdim__red_1_1_m_d_s.html#_CPPv4N7dim_red3MDS7stress_E">dim_red::MDS::stress_ (C++ member)</a>
 </li>
       <li><a href="cpp_api/typedef__dim_red_tools_8hpp_1ab2c3e1daa4bbe4a8b9dba362059d9cb4.html#_CPPv4N7dim_red6MetricE">dim_red::Metric (C++ type)</a>
 </li>
@@ -227,11 +251,33 @@
 </li>
       <li><a href="cpp_api/typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE">dim_red::Vector (C++ type)</a>
 </li>
+      <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.dissimilarity_matrix">dissimilarity_matrix (dimredtools.MDS property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.fit_transform">fit_transform() (dimredtools.MDS method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS">MDS (class in dimredtools)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.n_iter">n_iter (dimredtools.MDS property)</a>
+</li>
+  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="python_api/dimredtools.NearestNeighbors.html#dimredtools.NearestNeighbors">NearestNeighbors (class in dimredtools)</a>
 </li>
@@ -262,10 +308,10 @@
   </ul></td>
 </tr></table>
 
-<h2 id="T">T</h2>
+<h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="cpp_api/function___testdata_8hpp_1aeaf29d11348f760a1607d0383310f7ce.html#_CPPv411testDatasetii">testDataset (C++ function)</a>
+      <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.stress">stress (dimredtools.MDS property)</a>
 </li>
   </ul></td>
 </tr></table>

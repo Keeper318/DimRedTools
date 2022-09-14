@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Program Listing for File _testdata.hpp &mdash; DimRedTools 0.2.0 documentation</title>
+  <title>File MDS.hpp &mdash; DimRedTools 0.3.0 documentation</title>
       <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -30,7 +30,7 @@
             <a href="../index.html" class="icon icon-home"> DimRedTools
           </a>
               <div class="version">
-                0.2.0
+                0.3.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -74,7 +74,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Program Listing for File _testdata.hpp</li>
+      <li>File MDS.hpp</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -107,26 +107,47 @@
     text-align: unset;
 }
 </style>
-<section id="program-listing-for-file-testdata-hpp">
-<span id="program-listing-file-include-dimredtools-tests-testdata-hpp"></span><h1>Program Listing for File _testdata.hpp<a class="headerlink" href="#program-listing-for-file-testdata-hpp" title="Permalink to this headline"></a></h1>
-<p>↰ <a class="reference internal" href="file_include_DimRedTools_tests__testdata.hpp.html#file-include-dimredtools-tests-testdata-hpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">include\DimRedTools\tests\_testdata.hpp</span></code>)</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef DIMREDTOOLS_SRC_DIMREDTOOLS__TESTDATA_HPP_</span>
-<span class="cp">#define DIMREDTOOLS_SRC_DIMREDTOOLS__TESTDATA_HPP_</span>
-
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;DimRedTools/DimRedTools.hpp&quot;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;random&gt;</span><span class="cp"></span>
-
-<span class="k">using</span><span class="w"> </span><span class="n">dim_red</span><span class="o">::</span><span class="n">Matrix</span><span class="p">;</span><span class="w"></span>
-
-<span class="n">Matrix</span><span class="w"> </span><span class="nf">testDataset</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">samples</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">features</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">mt19937</span><span class="w"> </span><span class="n">generator</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">normal_distribution</span><span class="w"> </span><span class="n">distribution</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Matrix</span><span class="o">::</span><span class="n">NullaryExpr</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">]()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">distribution</span><span class="p">(</span><span class="n">generator</span><span class="p">);</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="cp">#endif  </span><span class="c1">// DIMREDTOOLS_SRC_DIMREDTOOLS__TESTDATA_HPP_</span>
-</pre></div>
+<section id="file-mds-hpp">
+<span id="file-include-dimredtools-mds-hpp"></span><h1>File MDS.hpp<a class="headerlink" href="#file-mds-hpp" title="Permalink to this headline"></a></h1>
+<p>↰ <a class="reference internal" href="dir_include_DimRedTools.html#dir-include-dimredtools"><span class="std std-ref">Parent directory</span></a> (<code class="docutils literal notranslate"><span class="pre">include\DimRedTools</span></code>)</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#definition-include-dimredtools-mds-hpp" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">include\DimRedTools\MDS.hpp</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#includes" id="id2">Includes</a></p></li>
+<li><p><a class="reference internal" href="#namespaces" id="id3">Namespaces</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id4">Classes</a></p></li>
+</ul>
 </div>
+<section id="definition-include-dimredtools-mds-hpp">
+<h2>Definition (<code class="docutils literal notranslate"><span class="pre">include\DimRedTools\MDS.hpp</span></code>)<a class="headerlink" href="#definition-include-dimredtools-mds-hpp" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="program_listing_file_include_DimRedTools_MDS.hpp.html">Program Listing for File MDS.hpp</a></li>
+</ul>
+</div>
+</section>
+<section id="includes">
+<h2>Includes<a class="headerlink" href="#includes" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DimRedTools.hpp</span></code> (<a class="reference internal" href="file_include_DimRedTools_DimRedTools.hpp.html#file-include-dimredtools-dimredtools-hpp"><span class="std std-ref">File DimRedTools.hpp</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">optional</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random</span></code></p></li>
+</ul>
+</section>
+<section id="namespaces">
+<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="namespace_dim_red.html#namespace-dim-red"><span class="std std-ref">Namespace dim_red</span></a></p></li>
+</ul>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="structdim__red_1_1_m_d_s_1_1_result.html#exhale-struct-structdim-red-1-1-m-d-s-1-1-result"><span class="std std-ref">Struct MDS::Result</span></a></p></li>
+<li><p><a class="reference internal" href="classdim__red_1_1_m_d_s.html#exhale-class-classdim-red-1-1-m-d-s"><span class="std std-ref">Class MDS</span></a></p></li>
+</ul>
+</section>
 </section>
 
 

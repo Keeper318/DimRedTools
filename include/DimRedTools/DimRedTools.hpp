@@ -14,6 +14,7 @@ namespace dim_red {
 using Matrix = Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>;
 using Vector = Eigen::RowVectorXd;
 using IntVector = Eigen::RowVectorXi;
+using Array = Eigen::Array<double, 1, Eigen::Dynamic, Eigen::RowMajor>;
 using Metric =
     std::function<double(const Eigen::Ref<const Vector> &, const Eigen::Ref<const Vector> &)>;
 
