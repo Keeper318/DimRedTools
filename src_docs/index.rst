@@ -9,10 +9,6 @@
 DimRedTools: A set of algorithms and data structures for dimensionality reduction
 =================================================================================
 
-.. note::
-
-   This project is under active development.
-
 .. only: not latex
 
     Contents:

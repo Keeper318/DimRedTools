@@ -6,6 +6,7 @@
 #include "DimRedTools/CoverTree.hpp"
 #include "DimRedTools/CompressedCoverTree.hpp"
 #include "DimRedTools/MDS.hpp"
+#include "DimRedTools/Isomap.hpp"
 
 namespace py = pybind11;
 using py::literals::operator""_a;

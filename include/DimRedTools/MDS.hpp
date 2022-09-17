@@ -60,7 +60,7 @@ public:
     /**
      * @brief Fit mapping.
      *
-     * @param x symmetric matrix of dissimilarities.
+     * @param x training data, or matrix of dissimilarities if 'dissimilarity' == 'precomputed'.
      * @param init the initial projected coordinates, of which the column size is the projection
      * dimension.
      * @return the final projected coordinates.

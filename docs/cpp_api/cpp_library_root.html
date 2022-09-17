@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C++ Library API &mdash; DimRedTools 0.3.0 documentation</title>
+  <title>C++ Library API &mdash; DimRedTools 0.4.0 documentation</title>
       <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -32,7 +32,7 @@
             <a href="../index.html" class="icon icon-home"> DimRedTools
           </a>
               <div class="version">
-                0.3.0
+                0.4.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -77,6 +77,7 @@
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_bruteforce.html">Class Bruteforce</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_compressed_cover_tree.html">Class CompressedCoverTree</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_cover_tree.html">Class CoverTree</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_isomap.html">Class Isomap</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_m_d_s.html">Class MDS</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_nearest_neighbors.html">Class NearestNeighbors</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classdim__red_1_1_neighbors_heap.html">Template Class NeighborsHeap</a></li>
@@ -154,7 +155,7 @@
 <ul class="treeView" id="class-treeView">
   <li>
     <ul class="collapsibleList">
-      <li class="lastChild">Namespace <a href="namespace_dim_red.html#namespace-dim-red">dim_red</a><ul><li>Class <a href="classdim__red_1_1_bruteforce.html#exhale-class-classdim-red-1-1-bruteforce">Bruteforce</a></li><li>Class <a href="classdim__red_1_1_compressed_cover_tree.html#exhale-class-classdim-red-1-1-compressed-cover-tree">CompressedCoverTree</a><ul><li>Struct <a href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html#exhale-struct-structdim-red-1-1-compressed-cover-tree-1-1-cover-set-entry">CompressedCoverTree::CoverSetEntry</a></li><li class="lastChild">Struct <a href="structdim__red_1_1_compressed_cover_tree_1_1_node.html#exhale-struct-structdim-red-1-1-compressed-cover-tree-1-1-node">CompressedCoverTree::Node</a></li></ul></li><li>Class <a href="classdim__red_1_1_cover_tree.html#exhale-class-classdim-red-1-1-cover-tree">CoverTree</a><ul><li>Struct <a href="structdim__red_1_1_cover_tree_1_1_distance_node.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-node">CoverTree::DistanceNode</a></li><li>Struct <a href="structdim__red_1_1_cover_tree_1_1_distance_set.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-set">CoverTree::DistanceSet</a></li><li class="lastChild">Struct <a href="structdim__red_1_1_cover_tree_1_1_node.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-node">CoverTree::Node</a></li></ul></li><li>Class <a href="classdim__red_1_1_m_d_s.html#exhale-class-classdim-red-1-1-m-d-s">MDS</a><ul><li class="lastChild">Struct <a href="structdim__red_1_1_m_d_s_1_1_result.html#exhale-struct-structdim-red-1-1-m-d-s-1-1-result">MDS::Result</a></li></ul></li><li>Class <a href="classdim__red_1_1_nearest_neighbors.html#exhale-class-classdim-red-1-1-nearest-neighbors">NearestNeighbors</a></li><li class="lastChild">Template Class <a href="classdim__red_1_1_neighbors_heap.html#exhale-class-classdim-red-1-1-neighbors-heap">NeighborsHeap</a></li></ul></li>
+      <li class="lastChild">Namespace <a href="namespace_dim_red.html#namespace-dim-red">dim_red</a><ul><li>Class <a href="classdim__red_1_1_bruteforce.html#exhale-class-classdim-red-1-1-bruteforce">Bruteforce</a></li><li>Class <a href="classdim__red_1_1_compressed_cover_tree.html#exhale-class-classdim-red-1-1-compressed-cover-tree">CompressedCoverTree</a><ul><li>Struct <a href="structdim__red_1_1_compressed_cover_tree_1_1_cover_set_entry.html#exhale-struct-structdim-red-1-1-compressed-cover-tree-1-1-cover-set-entry">CompressedCoverTree::CoverSetEntry</a></li><li class="lastChild">Struct <a href="structdim__red_1_1_compressed_cover_tree_1_1_node.html#exhale-struct-structdim-red-1-1-compressed-cover-tree-1-1-node">CompressedCoverTree::Node</a></li></ul></li><li>Class <a href="classdim__red_1_1_cover_tree.html#exhale-class-classdim-red-1-1-cover-tree">CoverTree</a><ul><li>Struct <a href="structdim__red_1_1_cover_tree_1_1_distance_node.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-node">CoverTree::DistanceNode</a></li><li>Struct <a href="structdim__red_1_1_cover_tree_1_1_distance_set.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-distance-set">CoverTree::DistanceSet</a></li><li class="lastChild">Struct <a href="structdim__red_1_1_cover_tree_1_1_node.html#exhale-struct-structdim-red-1-1-cover-tree-1-1-node">CoverTree::Node</a></li></ul></li><li>Class <a href="classdim__red_1_1_isomap.html#exhale-class-classdim-red-1-1-isomap">Isomap</a></li><li>Class <a href="classdim__red_1_1_m_d_s.html#exhale-class-classdim-red-1-1-m-d-s">MDS</a><ul><li class="lastChild">Struct <a href="structdim__red_1_1_m_d_s_1_1_result.html#exhale-struct-structdim-red-1-1-m-d-s-1-1-result">MDS::Result</a></li></ul></li><li>Class <a href="classdim__red_1_1_nearest_neighbors.html#exhale-class-classdim-red-1-1-nearest-neighbors">NearestNeighbors</a></li><li class="lastChild">Template Class <a href="classdim__red_1_1_neighbors_heap.html#exhale-class-classdim-red-1-1-neighbors-heap">NeighborsHeap</a></li></ul></li>
     </ul>
   </li><!-- only tree view element -->
 </ul><!-- /treeView class-treeView --></section>
@@ -163,7 +164,7 @@
 <ul class="treeView" id="file-treeView">
   <li>
     <ul class="collapsibleList">
-      <li class="lastChild">Directory <a href="dir_include.html#dir-include">include</a><ul><li class="lastChild">Directory <a href="dir_include_DimRedTools.html#dir-include-DimRedTools">DimRedTools</a><ul><li>File <a href="file_include_DimRedTools_CompressedCoverTree.hpp.html#file-include-DimRedTools-CompressedCoverTree.hpp">CompressedCoverTree.hpp</a></li><li>File <a href="file_include_DimRedTools_CoverTree.hpp.html#file-include-DimRedTools-CoverTree.hpp">CoverTree.hpp</a></li><li>File <a href="file_include_DimRedTools_DimRedTools.hpp.html#file-include-DimRedTools-DimRedTools.hpp">DimRedTools.hpp</a></li><li class="lastChild">File <a href="file_include_DimRedTools_MDS.hpp.html#file-include-DimRedTools-MDS.hpp">MDS.hpp</a></li></ul></li></ul></li>
+      <li class="lastChild">Directory <a href="dir_include.html#dir-include">include</a><ul><li class="lastChild">Directory <a href="dir_include_DimRedTools.html#dir-include-DimRedTools">DimRedTools</a><ul><li>File <a href="file_include_DimRedTools_CompressedCoverTree.hpp.html#file-include-DimRedTools-CompressedCoverTree.hpp">CompressedCoverTree.hpp</a></li><li>File <a href="file_include_DimRedTools_CoverTree.hpp.html#file-include-DimRedTools-CoverTree.hpp">CoverTree.hpp</a></li><li>File <a href="file_include_DimRedTools_DimRedTools.hpp.html#file-include-DimRedTools-DimRedTools.hpp">DimRedTools.hpp</a></li><li>File <a href="file_include_DimRedTools_Isomap.hpp.html#file-include-DimRedTools-Isomap.hpp">Isomap.hpp</a></li><li class="lastChild">File <a href="file_include_DimRedTools_MDS.hpp.html#file-include-DimRedTools-MDS.hpp">MDS.hpp</a></li></ul></li></ul></li>
     </ul>
   </li><!-- only tree view element -->
 </ul><!-- /treeView file-treeView --></section>
@@ -278,6 +279,14 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_cover_tree.html#class-documentation">Class Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classdim__red_1_1_isomap.html">Class Isomap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classdim__red_1_1_isomap.html#class-documentation">Class Documentation</a></li>
 </ul>
 </li>
 </ul>

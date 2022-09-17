@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; DimRedTools 0.3.0 documentation</title>
+  <title>Index &mdash; DimRedTools 0.4.0 documentation</title>
       <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -29,7 +29,7 @@
             <a href="index.html" class="icon icon-home"> DimRedTools
           </a>
               <div class="version">
-                0.3.0
+                0.4.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -90,6 +90,7 @@
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#F"><strong>F</strong></a>
+ | <a href="#I"><strong>I</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#Q"><strong>Q</strong></a>
@@ -103,6 +104,8 @@
 
       <ul>
         <li><a href="python_api/dimredtools.CoverTree.html#dimredtools.CoverTree.__init__">(dimredtools.CoverTree method)</a>
+</li>
+        <li><a href="python_api/dimredtools.Isomap.html#dimredtools.Isomap.__init__">(dimredtools.Isomap method)</a>
 </li>
         <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.__init__">(dimredtools.MDS method)</a>
 </li>
@@ -189,19 +192,31 @@
 </li>
       <li><a href="cpp_api/structdim__red_1_1_cover_tree_1_1_node.html#_CPPv4N7dim_red9CoverTree4Node4NodeERK4Node">dim_red::CoverTree::Node::Node (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="cpp_api/structdim__red_1_1_cover_tree_1_1_node.html#_CPPv4N7dim_red9CoverTree4Node5pointE">dim_red::CoverTree::Node::point (C++ member)</a>
 </li>
       <li><a href="cpp_api/classdim__red_1_1_cover_tree.html#_CPPv4NK7dim_red9CoverTree5queryERKN5Eigen3RefIK6VectorEEib">dim_red::CoverTree::query (C++ function)</a>
 </li>
       <li><a href="cpp_api/classdim__red_1_1_cover_tree.html#_CPPv4NK7dim_red9CoverTree11queryRadiusERKN5Eigen3RefIK6VectorEEdb">dim_red::CoverTree::queryRadius (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="cpp_api/classdim__red_1_1_cover_tree.html#_CPPv4N7dim_red9CoverTreeD0Ev">dim_red::CoverTree::~CoverTree (C++ function)</a>
 </li>
       <li><a href="cpp_api/function__dim_red_tools_8hpp_1a6fa12d3d3cdeb861c130fed73f836092.html#_CPPv4N7dim_red15getMetricByNameERKNSt6stringE">dim_red::getMetricByName (C++ function)</a>
 </li>
       <li><a href="cpp_api/typedef__dim_red_tools_8hpp_1a7f1ea1f88e05db600f4d889dfab40fbf.html#_CPPv4N7dim_red9IntVectorE">dim_red::IntVector (C++ type)</a>
+</li>
+      <li><a href="cpp_api/classdim__red_1_1_isomap.html#_CPPv4N7dim_red6IsomapE">dim_red::Isomap (C++ class)</a>
+</li>
+      <li><a href="cpp_api/classdim__red_1_1_isomap.html#_CPPv4N7dim_red6Isomap12dist_matrix_E">dim_red::Isomap::dist_matrix_ (C++ member)</a>
+</li>
+      <li><a href="cpp_api/classdim__red_1_1_isomap.html#_CPPv4N7dim_red6Isomap12fitTransformERKN5Eigen3RefIK6MatrixEE">dim_red::Isomap::fitTransform (C++ function)</a>
+</li>
+      <li><a href="cpp_api/classdim__red_1_1_isomap.html#_CPPv4N7dim_red6Isomap6IsomapENSt8optionalIiEENSt8optionalIdEEiiddiRKNSt6stringERKNSt6stringE">dim_red::Isomap::Isomap (C++ function)</a>
+</li>
+      <li><a href="cpp_api/classdim__red_1_1_isomap.html#_CPPv4N7dim_red6Isomap5nbrs_E">dim_red::Isomap::nbrs_ (C++ member)</a>
+</li>
+      <li><a href="cpp_api/classdim__red_1_1_isomap.html#_CPPv4N7dim_red6IsomapD0Ev">dim_red::Isomap::~Isomap (C++ function)</a>
 </li>
       <li><a href="cpp_api/typedef__dim_red_tools_8hpp_1a54b732889aff7d6ffa2d39f32b5c676f.html#_CPPv4N7dim_red6MatrixE">dim_red::Matrix (C++ type)</a>
 </li>
@@ -251,7 +266,9 @@
 </li>
       <li><a href="cpp_api/typedef__dim_red_tools_8hpp_1a347fde01ec49b5c994000510a10f36c0.html#_CPPv4N7dim_red6VectorE">dim_red::Vector (C++ type)</a>
 </li>
-      <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.dissimilarity_matrix">dissimilarity_matrix (dimredtools.MDS property)</a>
+      <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.dissimilarity_matrix_">dissimilarity_matrix_ (dimredtools.MDS property)</a>
+</li>
+      <li><a href="python_api/dimredtools.Isomap.html#dimredtools.Isomap.dist_matrix_">dist_matrix_ (dimredtools.Isomap property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -259,7 +276,19 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.fit_transform">fit_transform() (dimredtools.MDS method)</a>
+      <li><a href="python_api/dimredtools.Isomap.html#dimredtools.Isomap.fit_transform">fit_transform() (dimredtools.Isomap method)</a>
+
+      <ul>
+        <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.fit_transform">(dimredtools.MDS method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="python_api/dimredtools.Isomap.html#dimredtools.Isomap">Isomap (class in dimredtools)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -275,10 +304,12 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.n_iter">n_iter (dimredtools.MDS property)</a>
+      <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.n_iter_">n_iter_ (dimredtools.MDS property)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="python_api/dimredtools.Isomap.html#dimredtools.Isomap.nbrs_">nbrs_ (dimredtools.Isomap property)</a>
+</li>
       <li><a href="python_api/dimredtools.NearestNeighbors.html#dimredtools.NearestNeighbors">NearestNeighbors (class in dimredtools)</a>
 </li>
   </ul></td>
@@ -311,7 +342,7 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.stress">stress (dimredtools.MDS property)</a>
+      <li><a href="python_api/dimredtools.MDS.html#dimredtools.MDS.stress_">stress_ (dimredtools.MDS property)</a>
 </li>
   </ul></td>
 </tr></table>

@@ -44,9 +44,9 @@ add_subdirectory("thirdparty")
 add_subdirectory("src")
 
 # Build examples if configured
-if(DRT_BUILD_EXAMPLES)
-    add_subdirectory("examples")
-endif()
+# if(DRT_BUILD_EXAMPLES)
+#     add_subdirectory("examples")
+# endif()
 
 # Build tests if configured
 if(DRT_BUILD_TESTS)

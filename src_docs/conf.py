@@ -24,6 +24,7 @@ import sys
 import os
 import re
 import subprocess
+import sphinx_rtd_theme
 
 
 def get_git_short_hash():
@@ -52,7 +53,7 @@ sys.path.insert(
 # ones.
 extensions = [
     'sphinx.ext.mathjax', 'sphinx.ext.autodoc', 'sphinx.ext.autosummary',
-    'sphinx.ext.napoleon', 'breathe', 'exhale', 'm2r2', 'nbsphinx','nbsphinx_link',
+    'sphinx.ext.napoleon', 'breathe', 'exhale', 'm2r2', 'nbsphinx','nbsphinx_link', 'sphinx_rtd_theme'
 ]
 
 # Setup the breathe extension

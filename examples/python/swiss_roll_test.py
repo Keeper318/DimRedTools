@@ -1,3 +1,4 @@
+from sklearn.datasets import make_swiss_roll
 from matplotlib import pyplot as plt
 
 
@@ -15,3 +16,9 @@ def test_model(model, X, color):
     plt.grid(linestyle="dotted")
     plt.scatter(x[:, 0], x[:, 1], c=color, cmap=plt.cm.rainbow)
     plt.show()
+
+
+def run(model):
+    X, color = make_swiss_roll(n_samples=1000, random_state=123)
+    show_swiss_roll(X, color)
+    test_model(model, X, color)
