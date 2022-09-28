@@ -20,11 +20,10 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-import sys
 import os
 import re
 import subprocess
-import sphinx_rtd_theme
+import sys
 
 
 def get_git_short_hash():
@@ -53,7 +52,8 @@ sys.path.insert(
 # ones.
 extensions = [
     'sphinx.ext.mathjax', 'sphinx.ext.autodoc', 'sphinx.ext.autosummary',
-    'sphinx.ext.napoleon', 'breathe', 'exhale', 'm2r2', 'nbsphinx','nbsphinx_link', 'sphinx_rtd_theme'
+    'sphinx.ext.napoleon', 'breathe', 'exhale', 'm2r2', 'nbsphinx',
+    'nbsphinx_link', 'sphinx_rtd_theme'
 ]
 
 # Setup the breathe extension
@@ -66,16 +66,16 @@ breathe_default_project = "DimRedTools_CPP"
 # Setup the exhale extension
 exhale_args = {
     # These arguments are required
-    "containmentFolder":     "./cpp_api",
-    "rootFileName":          "cpp_library_root.rst",
-    "rootFileTitle":         "C++ Library API",
-    "doxygenStripFromPath":  "..",
+    "containmentFolder": "./cpp_api",
+    "rootFileName": "cpp_library_root.rst",
+    "rootFileTitle": "C++ Library API",
+    "doxygenStripFromPath": "..",
     # Suggested optional arguments
-    "createTreeView":        True,
+    "createTreeView": True,
     # TIP: if using the sphinx-bootstrap-theme, you need
     # "treeViewIsBootstrap": True,
     "exhaleExecutesDoxygen": True,
-    "exhaleDoxygenStdin":    "INPUT = ../include"
+    "exhaleDoxygenStdin": "INPUT = ../include"
 }
 
 # Add any paths that contain templates here, relative to this directory.
@@ -154,11 +154,7 @@ html_theme_options = {
 html_static_path = ['_static']
 
 # Force table wrap: https://rackerlabs.github.io/docs-rackspace/tools/rtd-tables.html
-html_context = {
-    'css_files': [
-        '_static/theme_overrides.css',  # override wide tables in RTD theme
-    ],
-}
+html_css_files = ['theme_overrides.css']
 
 # added by Jaesik to hide "View page source"
 html_show_sourcelink = False
@@ -200,7 +196,8 @@ latex_elements = {
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, 'dimredtools', u'DimRedTools Documentation', [author], 1)]
+man_pages = [
+    (master_doc, 'dimredtools', u'DimRedTools Documentation', [author], 1)]
 
 # -- Options for Texinfo output -------------------------------------------
 
@@ -208,8 +205,10 @@ man_pages = [(master_doc, 'dimredtools', u'DimRedTools Documentation', [author],
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'dimredtools', u'DimRedTools Documentation', author, 'DimRedTools',
-     'A set of algorithms and data structures for dimensionality reduction', 'Miscellaneous'),
+    (master_doc, 'dimredtools', u'DimRedTools Documentation', author,
+     'DimRedTools',
+     'A set of algorithms and data structures for dimensionality reduction',
+     'Miscellaneous'),
 ]
 
 # Version 0: Added by Jaesik to list Python members using the source order
@@ -219,7 +218,6 @@ autodoc_member_order = 'groupwise'
 
 
 def is_enum_class(func, func_name):
-
     def import_from_str(class_name):
         components = class_name.split('.')
         mod = __import__(components[0])

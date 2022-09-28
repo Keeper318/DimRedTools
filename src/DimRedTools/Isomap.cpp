@@ -38,7 +38,7 @@ Isomap::Graph Isomap::buildGraph(Eigen::Ref<const Matrix> x) {
     } else if (neighbors_algorithm_ == "brute") {
         nbrs_ = new Bruteforce(x, metric_);
     } else {
-        throw std::invalid_argument("Unknown algorithm for nearest neighbors search: " + metric_);
+        throw std::invalid_argument("Unknown algorithm for nearest neighbors search: " + neighbors_algorithm_);
     }
     if (n_neighbors_.has_value() == radius_.has_value()) {
         throw std::invalid_argument(
