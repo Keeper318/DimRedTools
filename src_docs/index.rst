@@ -37,7 +37,6 @@ DimRedTools: A set of algorithms and data structures for dimensionality reductio
     :caption: Python API
 
     python_api/dimredtools
-    python_api/dimredtools.helper
 
 ..
     This is a comment. Please duplicate the module and meta data you want here!

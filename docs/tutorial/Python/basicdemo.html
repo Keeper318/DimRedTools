@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Python Module Overview &mdash; DimRedTools 0.4.0 documentation</title>
+  <title>DimRedTools Overview &mdash; DimRedTools 0.4.1 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/collapsible-lists\css\tree_view.css" type="text/css" />
@@ -37,7 +37,7 @@
             <a href="../../index.html" class="icon icon-home"> DimRedTools
           </a>
               <div class="version">
-                0.4.0
+                0.4.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -55,7 +55,7 @@
 <p class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Python Module Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DimRedTools Overview</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../C%2B%2B/index.html">C++</a></li>
@@ -63,7 +63,6 @@
 <p class="caption" role="heading"><span class="caption-text">Python API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../python_api/dimredtools.html">dimredtools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../python_api/dimredtools.helper.html">dimredtools.helper</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">C++ API</span></p>
 <ul>
@@ -85,7 +84,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Python</a> &raquo;</li>
-      <li>Python Module Overview</li>
+      <li>DimRedTools Overview</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -372,22 +371,47 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="Python-Module-Overview">
-<h1>Python Module Overview<a class="headerlink" href="#Python-Module-Overview" title="Permalink to this headline"></a></h1>
+<section id="DimRedTools-Overview">
+<h1>DimRedTools Overview<a class="headerlink" href="#DimRedTools-Overview" title="Permalink to this headline"></a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install dimredtools
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">dimredtools</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_swiss_roll</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">dimredtools</span><span class="p">))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">show_swiss_roll</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Swiss Roll in 3D&quot;</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">test_model</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">result</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">result</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">make_swiss_roll</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">show_swiss_roll</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -395,9 +419,89 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div class="highlight"><pre>
-[&#39;CompressedCoverTree&#39;, &#39;CoverTree&#39;, &#39;MDS&#39;, &#39;NearestNeighbors&#39;, &#39;__builtins__&#39;, &#39;__cached__&#39;, &#39;__doc__&#39;, &#39;__file__&#39;, &#39;__loader__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__path__&#39;, &#39;__spec__&#39;, &#39;__version__&#39;, &#39;dimredtools_pybind&#39;, &#39;pkg_resources&#39;]
-</pre></div></div>
+<img alt="../../_images/tutorial_Python_basicdemo_3_0.png" src="../../_images/tutorial_Python_basicdemo_3_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">init</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">([</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">num</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">T</span><span class="p">)[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">color</span><span class="p">))]</span>
+<span class="n">test_model</span><span class="p">(</span><span class="n">dimredtools</span><span class="o">.</span><span class="n">MDS</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">init</span><span class="p">),</span> <span class="n">color</span><span class="p">,</span> <span class="s2">&quot;MDS result&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorial_Python_basicdemo_4_0.png" src="../../_images/tutorial_Python_basicdemo_4_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">isomap</span> <span class="o">=</span> <span class="n">dimredtools</span><span class="o">.</span><span class="n">Isomap</span><span class="p">()</span>
+<span class="n">isomap</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">test_model</span><span class="p">(</span><span class="n">dimredtools</span><span class="o">.</span><span class="n">MDS</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">1.5e-3</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">isomap</span><span class="o">.</span><span class="n">dist_matrix_</span><span class="p">,</span> <span class="n">init</span><span class="p">),</span> <span class="n">color</span><span class="p">,</span> <span class="s2">&quot;Isomap result&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorial_Python_basicdemo_5_0.png" src="../../_images/tutorial_Python_basicdemo_5_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tree</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[(</span><span class="n">dimredtools</span><span class="o">.</span><span class="n">CoverTree</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s2">&quot;Cover Tree sample query&quot;</span><span class="p">),</span> <span class="p">(</span><span class="n">dimredtools</span><span class="o">.</span><span class="n">CompressedCoverTree</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s2">&quot;Compressed Cover Tree sample query&quot;</span><span class="p">)]:</span>
+    <span class="n">distances</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span> <span class="n">k</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">color1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">color1</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">show_swiss_roll</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">color1</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorial_Python_basicdemo_6_0.png" src="../../_images/tutorial_Python_basicdemo_6_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/tutorial_Python_basicdemo_6_1.png" src="../../_images/tutorial_Python_basicdemo_6_1.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">models</span> <span class="o">=</span> <span class="p">[</span><span class="n">dimredtools</span><span class="o">.</span><span class="n">CoverTree</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">dimredtools</span><span class="o">.</span><span class="n">CompressedCoverTree</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">dimredtools</span><span class="o">.</span><span class="n">Bruteforce</span><span class="p">(</span><span class="n">X</span><span class="p">)]</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Cover Tree&quot;</span><span class="p">,</span> <span class="s2">&quot;Compressed Cover Tree&quot;</span><span class="p">,</span> <span class="s2">&quot;Bruteforce&quot;</span><span class="p">]</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="n">distances</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Performance benchmark, 1000 queries of 10 nearest neighbors among 1000 objects&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;time in seconds&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 </section>
 
