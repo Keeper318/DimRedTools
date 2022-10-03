@@ -19,6 +19,10 @@ PYBIND11_MODULE(dimredtools_pybind, m) {
              "sort_results"_a = false,
              "Retrieves all the neighbors of the query point in the specified radius.");
 
+    py::class_<Bruteforce, NearestNeighbors>(m, "Bruteforce")
+        .def(py::init<const Eigen::Ref<const dim_red::Matrix> &, const std::string &>(),
+             "x"_a, "metric"_a = "euclidean");
+
     py::class_<CoverTree, NearestNeighbors>(m, "CoverTree")
         .def(py::init<const Eigen::Ref<const dim_red::Matrix> &, double, const std::string &>(),
              "x"_a, "base"_a = 1.3, "metric"_a = "euclidean");
