@@ -1,7 +1,7 @@
 #include "dimredtools_pybind/dimredtools_pybind.hpp"
 #include "dimredtools_pybind/docstring/docstring.hpp"
 
-using dim_red::Bruteforce
+using dim_red::Bruteforce;
 using dim_red::CompressedCoverTree;
 using dim_red::CoverTree;
 using dim_red::Isomap;
